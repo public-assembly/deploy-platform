@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Header } from 'components/Header'
+import { Input } from 'components/Input'
 
 const InputTitle: NextPage = () => {
   return (
@@ -12,7 +12,7 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header headerText={'Input Title'} />
+      <Input label={'Input Title'} placeholder='e.g. Neosound'/>
     </div>
   )
 }

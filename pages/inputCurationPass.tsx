@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Header } from 'components/Header'
+import { Input } from 'components/Input'
 
 const InputCurationPass: NextPage = () => {
   
@@ -13,7 +13,7 @@ const InputCurationPass: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header headerText={'Input Curation Pass'} />
+      <Input label={'Input Curation Pass'} placeholder='e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7'/>
     </div>
   )
 }
