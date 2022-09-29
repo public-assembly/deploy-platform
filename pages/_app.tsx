@@ -2,7 +2,7 @@ import 'styles/globals.css'
 import type { AppProps } from 'next/app'
 import { AppWrapper, PageWrapper } from './../components'
 
-function NetLabel({ Component, pageProps }: AppProps) {
+function DeployPlatform({ Component, pageProps }: AppProps) {
   return (
     <AppWrapper>
       <PageWrapper>
@@ -12,4 +12,4 @@ function NetLabel({ Component, pageProps }: AppProps) {
   )
 }
 
-export default NetLabel
+export default DeployPlatform
