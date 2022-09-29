@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { Header } from 'components/Header'
 
 const InputMedia: NextPage = () => {
   
@@ -12,6 +13,7 @@ const InputMedia: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
+      <Header headerText={'Input Media'} />
     </div>
   )
 }

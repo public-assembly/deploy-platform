@@ -1,9 +1,13 @@
 import { ConnectButton } from './ConnectButton'
 
-export function Header() {
+type HeaderProps = {
+  headerText?: string
+}
+
+export function Header({ headerText }: HeaderProps) {
   return (
     <header className="flex flex-row justify-between items-center w-full px-8">
-      <span className="text-2xl">Header</span>
+      <span className="text-2xl">{headerText}</span>
       <ConnectButton />
     </header>
   )
