@@ -6,9 +6,12 @@ type InputProps = {
 
 export const Input = ({ label, placeholder, value }: InputProps) => {
   return (
-    <label>
-      {label}
-      <input type="text" placeholder={placeholder} value={value} />
-    </label>
+    <div className="px-8">
+      <label>
+        {label}
+        <br></br>
+        <input type="text" placeholder={placeholder} value={value} />
+      </label>
+    </div>
   )
 }
