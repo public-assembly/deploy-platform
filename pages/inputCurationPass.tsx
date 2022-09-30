@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { Input } from 'components/Input'
 
 const InputCurationPass: NextPage = () => {
-  
   return (
     <div>
       <Head>
@@ -13,7 +12,15 @@ const InputCurationPass: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Input label={'Input Curation Pass'} placeholder='e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7'/>
+
+      <div className="px-8">
+        <Input
+          label={'Input Curation Pass'}
+          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+        />
+        <br></br>
+        {/* <button onClick={() => send('CONFIRM_CURATION_PASS')}>Confirm Curation Pass</button> */}
+      </div>
     </div>
   )
 }

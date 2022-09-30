@@ -1,8 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
 const Home: NextPage = () => {
-  
   return (
     <div>
       <Head>
@@ -12,6 +12,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
+      <div className="px-8">
+        <Link href="/inputTitle">
+          <a>Begin Form</a>
+        </Link>
+      </div>
     </div>
   )
 }

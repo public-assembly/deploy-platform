@@ -1,8 +1,20 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Input } from 'components/Input'
+import { useMachine } from '@xstate/react'
+import { deployPlatform } from 'utils/deployPlatform'
+import { useRouter } from 'next/router'
 
 const InputTitle: NextPage = () => {
+  const router = useRouter()
+  const [state, send] = useMachine(deployPlatform, {
+    actions: {
+      goToNextPage: () => {
+        router.push('/inputCurationPass')
+      },
+    },
+  })
+
   return (
     <div>
       <Head>
@@ -12,7 +24,11 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Input label={'Input Title'} placeholder='e.g. Neosound'/>
+      <div className="px-8">
+        <Input label={'Input Title'} placeholder="e.g. Neosound" />
+        <br></br>
+        <button onClick={() => send('CONFIRM_TITLE')}>Confirm Title</button>
+      </div>
     </div>
   )
 }
