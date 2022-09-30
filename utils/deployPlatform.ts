@@ -40,10 +40,10 @@ export const deployPlatform = createMachine<
     // Initial state
     initial: 'enteringTitle',
 
-    context: {
-      title: '',
-      curationPass: '',
-    },
+    // context: {
+    //   title: '',
+    //   curationPass: '',
+    // },
 
     // State definitions
     states: {
