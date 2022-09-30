@@ -15,12 +15,15 @@ export type MultiStepFormMachineEvent =
     }
   | {
       // Event objects can also have other properties, which represent data associated with the event
-      type: 'CONFIRM_TITLE'
+      type: 'INPUT_TITLE'
       title: Title
     }
   | {
+      type: 'CONFIRM_TITLE'
+    }
+  | {
       type: 'CONFIRM_CURATION_PASS'
-      value: CurationPass
+      curationPass: CurationPass
     }
   | {
       type: 'CONFIRM'
@@ -37,13 +40,25 @@ export const deployPlatform = createMachine<
     // Initial state
     initial: 'enteringTitle',
 
+    context: {
+      title: '',
+      curationPass: '',
+    },
+
     // State definitions
     states: {
       enteringTitle: {
         on: {
+          INPUT_TITLE: {
+            actions: ['assignTitleToContext'],
+          },
           CONFIRM_TITLE: {
+            // Target denotes what the appropriate next state is
             target: 'enteringCurationPass',
-            actions: ['assignTitleToContext', 'goToNextPage'],
+            actions: ['goToNextPage'],
+          },
+          BACK: {
+            target: 'enteringTitle',
           },
         },
       },
@@ -51,7 +66,7 @@ export const deployPlatform = createMachine<
         on: {
           CONFIRM_CURATION_PASS: {
             actions: 'assignCurationPassToContext',
-            target: 'enteringMedia',
+            // target: 'enteringMedia',
           },
           BACK: {
             target: 'enteringTitle',
@@ -63,13 +78,13 @@ export const deployPlatform = createMachine<
   {
     actions: {
       assignTitleToContext: assign((context, event) => {
-        if (event.type !== 'CONFIRM_TITLE') return {}
+        if (event.type !== 'INPUT_TITLE') return {}
         return {
           title: event.title,
         }
       }),
     },
-    services: { deployContract: () => () => {} },
+    // services: { deployContract: () => () => {} },
   }
 )
 

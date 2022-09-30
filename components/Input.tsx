@@ -1,10 +1,13 @@
+import { FormEventHandler } from 'react'
+
 type InputProps = {
   label?: string
   placeholder?: string
   value?: string
+  onChange?: (text: string) => void
 }
 
-export const Input = ({ label, placeholder, value }: InputProps) => {
+export const Input = ({ label, placeholder, value, onChange }: InputProps) => {
   return (
     <div>
       <label>

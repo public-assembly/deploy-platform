@@ -7,13 +7,15 @@ import { useRouter } from 'next/router'
 
 const InputTitle: NextPage = () => {
   const router = useRouter()
-  const [state, send] = useMachine(deployPlatform, {
+  const [current, state, send] = useMachine(deployPlatform, {
     actions: {
       goToNextPage: () => {
         router.push('/inputCurationPass')
       },
     },
   })
+  console.log(current.context.title)
+//   console.log(state.context.title)
 
   return (
     <div>
@@ -25,7 +27,11 @@ const InputTitle: NextPage = () => {
         */}
       </Head>
       <div className="px-8">
-        <Input label={'Input Title'} placeholder="e.g. Neosound" />
+        <Input
+          label={'Input Title'}
+          placeholder="e.g. Neosound"
+          onChange={(e: any) => send({ type: 'INPUT_TITLE', title: e.target.value })}
+        />
         <br></br>
         <button onClick={() => send('CONFIRM_TITLE')}>Confirm Title</button>
       </div>

@@ -1,8 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Input } from 'components/Input'
+import { useMachine } from '@xstate/react'
+import { deployPlatform } from 'utils/deployPlatform'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 const InputCurationPass: NextPage = () => {
+  const [send, state] = useMachine(deployPlatform)
+    
+//   useEffect(() => {
+//     console.log()
+//   })
+
   return (
     <div>
       <Head>
