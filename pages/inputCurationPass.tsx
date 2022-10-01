@@ -1,9 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Input } from 'components/Input'
+import { useRouter } from 'next/router'
+import { useFormStateProvider } from 'context'
 
 const InputCurationPass: NextPage = () => {
-  
+  const router = useRouter()
+
+  const { curationPass, setCurationPass } = useFormStateProvider()
+
+  const handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      router.push('/inputMedia')
+    }
+  }
+
   return (
     <div>
       <Head>
@@ -13,7 +25,22 @@ const InputCurationPass: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Input label={'Input Curation Pass'} placeholder='e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7'/>
+      <div className="px-8">
+        <Input
+          label={'Input Curation Pass'}
+          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+          // value={currentTitle}
+          onChange={(e: any) => setCurationPass(e.currentTarget.value)}
+          onKeyPress={handleKeyPress}
+        />
+        {/* <Link href="/inputCurationPass">
+          <a>Next</a>
+        </Link> */}
+        <br></br>
+        <Link href="/inputTitle">
+          <a>Go Back</a>
+        </Link>
+      </div>
     </div>
   )
 }
