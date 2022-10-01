@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+import { useFormStateProvider } from 'context'
 
-const Home: NextPage = () => {
-  
+const Deploy: NextPage = () => {
+  const { title, curationPass, media } = useFormStateProvider()
+
   return (
     <div>
       <Head>
@@ -13,13 +14,15 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className='px-8'>
-      <Link href='inputTitle'>
-        <a>Create Platform</a>
-      </Link>
+      <div className='px-8 text-xl'>
+        {title}
+        <br></br>
+        {curationPass}
+        <br></br>
+        {media}
       </div>
     </div>
   )
 }
 
-export default Home
+export default Deploy

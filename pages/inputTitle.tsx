@@ -1,13 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
-import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 const InputTitle: NextPage = () => {
-    
+  const router = useRouter()
+
   const { title, setTitle } = useFormStateProvider()
   console.log('title: ', title)
+
+  const handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      router.push('/inputCurationPass')
+    }
+  }
 
   return (
     <div>
@@ -18,12 +26,19 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Input
-        label={'Input Title'}
-        placeholder="e.g. Neosound"
-        // value={currentTitle}
-        onChange={(e: any) => setTitle(e.currentTarget.value)}
-      />
+      <div className="px-8">
+        <Input
+          label={'Input Title'}
+          placeholder="e.g. Neosound"
+          // value={currentTitle}
+          onChange={(e: any) => setTitle(e.currentTarget.value)}
+          onKeyPress={handleKeyPress}
+        />
+        <br></br>
+        {/* <Link href="/inputCurationPass">
+          <a>Next</a>
+        </Link> */}
+      </div>
     </div>
   )
 }
