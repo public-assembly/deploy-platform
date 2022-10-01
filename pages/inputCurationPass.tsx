@@ -4,14 +4,21 @@ import { Input } from 'components/Input'
 import { useMachine } from '@xstate/react'
 import { deployPlatform } from 'utils/deployPlatform'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 
 const InputCurationPass: NextPage = () => {
-  const [send, state] = useMachine(deployPlatform)
-    
-//   useEffect(() => {
-//     console.log()
-//   })
+  const router = useRouter()
+  const [state, send] = useMachine(deployPlatform, {
+    actions: {
+      goToNextPage: () => {
+        router.push('/inputMedia')
+        console.log(state.context.curationPass)
+      },
+      goBack: () => {
+        router.push('/inputTitle')
+        console.log(state.context.title)
+      },
+    },
+  })
 
   return (
     <div>
@@ -29,7 +36,12 @@ const InputCurationPass: NextPage = () => {
           placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
         />
         <br></br>
-        {/* <button onClick={() => send('CONFIRM_CURATION_PASS')}>Confirm Curation Pass</button> */}
+
+        <button onClick={() => send('CONFIRM_CURATION_PASS')}>
+          Confirm Curation Pass
+        </button>
+        <br></br>
+        <button onClick={() => send('BACK')}>Go Back</button>
       </div>
     </div>
   )

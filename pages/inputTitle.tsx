@@ -29,6 +29,7 @@ const InputTitle: NextPage = () => {
         <Input
           label={'Input Title'}
           placeholder="e.g. Neosound"
+          value={state.context.title}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             send({ type: 'INPUT_TITLE', title: e.currentTarget.value })
           }

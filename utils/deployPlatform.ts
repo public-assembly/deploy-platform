@@ -59,6 +59,7 @@ export const deployPlatform = createMachine<
           },
           BACK: {
             target: 'enteringTitle',
+            actions: ['goBack'],
           },
         },
       },
@@ -101,18 +102,3 @@ export const deployPlatform = createMachine<
 //     },
 //   },
 // },
-
-// deployContract: {
-//     initial: 'idle',
-//     states: {
-//       idle: {},
-//       loading: {},
-//       error: {},
-//       success: {},
-//     },
-//     on: {
-//       BACK: {
-//         target: 'enteringMedia',
-//       },
-//     },
-//   },
