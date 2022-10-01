@@ -1,8 +1,14 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Input } from 'components/Input'
+import { useFormStateProvider } from 'context'
+import { useState } from 'react'
 
 const InputTitle: NextPage = () => {
+    
+  const { title, setTitle } = useFormStateProvider()
+  console.log('title: ', title)
+
   return (
     <div>
       <Head>
@@ -12,7 +18,12 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Input label={'Input Title'} placeholder='e.g. Neosound'/>
+      <Input
+        label={'Input Title'}
+        placeholder="e.g. Neosound"
+        // value={currentTitle}
+        onChange={(e: any) => setTitle(e.currentTarget.value)}
+      />
     </div>
   )
 }
