@@ -37,7 +37,7 @@ const InputMedia: NextPage = () => {
           <a>Next</a>
         </Link> */}
         <br></br>
-        <Link href="/inputTitle">
+        <Link href="/inputCurationPass">
           <a>Go Back</a>
         </Link>
       </div>

@@ -29,7 +29,6 @@ const InputCurationPass: NextPage = () => {
         <Input
           label={'Input Curation Pass'}
           placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-          // value={currentTitle}
           onChange={(e: any) => setCurationPass(e.currentTarget.value)}
           onKeyPress={handleKeyPress}
         />
@@ -37,7 +36,7 @@ const InputCurationPass: NextPage = () => {
           <a>Next</a>
         </Link> */}
         <br></br>
-        <Link href="/inputTitle">
+        <Link href="/inputSymbol">
           <a>Go Back</a>
         </Link>
       </div>

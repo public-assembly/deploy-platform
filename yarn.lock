@@ -785,6 +785,11 @@
   resolved "https://registry.yarnpkg.com/@pedrouid/environment/-/environment-1.0.1.tgz#858f0f8a057340e0b250398b75ead77d6f4342ec"
   integrity sha512-HaW78NszGzRZd9SeoI3JD11JqY+lubnaOx7Pewj5pfjqWXOEATpeKIFb9Z4t2WBUK2iryiXX3lzWwmYWgUL0Ug==
 
+"@public-assembly/assemble-curation-factory@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@public-assembly/assemble-curation-factory/-/assemble-curation-factory-0.0.3.tgz#dc20136862591df1f4f09204baf80e29a84ccca3"
+  integrity sha512-EtgucsCvRw5NVUU5oMYvFSj+ZvrrtoxZxGRmc0wHiaYeq9HMEAxKjFqcRo+QYGDfb4as5eUnA2oR3eQyOo9PjQ==
+
 "@rainbow-me/rainbowkit@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@rainbow-me/rainbowkit/-/rainbowkit-0.5.0.tgz#6fcb2ec343e789ba1fa260d8bfa36abab2b79a48"
