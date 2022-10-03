@@ -33,8 +33,8 @@ const InputTitle: NextPage = () => {
         </h1>
         <p className="pa-paragraph mt-8">
           Platforms that reference your contract will use this to provide a name for your
-          curation. This could be general like “Neosound”, or more specific like “Fall
-          Highlights."
+          curation. This could be general like &quot;Neosound&quot;, or more specific like
+          &quot;Fall Highlights.&quot;
         </p>
         <div className="mt-32">
           <Input
