@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
       <div className='px-8'>
       <Link href='inputTitle'>
-        <a>Create Platform</a>
+        <a className="pa-display">Create Platform</a>
       </Link>
       </div>
     </div>

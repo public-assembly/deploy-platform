@@ -1,0 +1,40 @@
+:root {
+  /* COLORS */
+  --pa__pink: #ff89de;
+  --pa__blue: #006ff1;
+  --pa__green: #00fd01;
+  --pa__text-dark: #0c1413;
+  --pa__text-light: #ecf1f0;
+}
+
+/* TYPOGRAPHY */
+.pa-display {
+  font-size: 12.5rem;
+  line-height: 11.5rem;
+  font-weight: 600;
+  /* color: var(--pa__text-dark); */
+}
+
+.pa-header {
+  font-size: 3.5rem;
+  line-height: 4.5rem;
+  font-weight: 600;
+  letter-spacing: 0.13rem;
+}
+
+.pa-paragraph {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
+  /* color: var(--pa__text-dark); */
+}
+
+.pa-paragraphLink {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
+  color: var(--pa__text-blue);
+  text-decoration: underline;
+}

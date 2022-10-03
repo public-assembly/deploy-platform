@@ -26,6 +26,7 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
+      <h1 className="pa-header">Test</h1>
       <div className="px-8">
         <Input
           label={'Input Title'}
