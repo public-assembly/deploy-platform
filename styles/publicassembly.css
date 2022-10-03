@@ -1,7 +1,47 @@
 :root {
+  /* COLORS */
   --pa__pink: #ff89de;
   --pa__blue: #006ff1;
   --pa__green: #00fd01;
   --pa__text-dark: #0c1413;
   --pa__text-light: #ecf1f0;
+}
+
+/* TYPOGRAPHY */
+.pa-display {
+  font-size: 200px;
+  line-height: 184px;
+  font-weight: 600;
+  /* color: var(--pa__text-dark); */
+}
+
+/* .pa-displayAlt {
+  font-size: 200px;
+  line-height: 184px;
+  font-weight: 600;
+  color: var(--pa__text-light);
+} */
+
+.pa-header {
+  font-size: 56px;
+  line-height: 72px;
+  font-weight: 600;
+  letter-spacing: 2%;
+}
+
+.pa-paragraph {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
+  letter-spacing: 1%;
+  /* color: var(--pa__text-dark); */
+}
+
+.pa-paragraphLink {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 400;
+  letter-spacing: 1%;
+  color: var(--pa__text-blue);
+  text-decoration: underline;
 }
