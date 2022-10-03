@@ -36,13 +36,15 @@ const InputTitle: NextPage = () => {
           curation. This could be general like “Neosound”, or more specific like “Fall
           Highlights."
         </p>
-        <Input
-          label={'Input Title'}
-          placeholder="e.g. Neosound"
-          onChange={(e: any) => setTitle(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-        />
-        <br></br>
+        <div className="mt-32">
+          <Input
+            label={'Input Title'}
+            placeholder="e.g. Neosound"
+            onChange={(e: any) => setTitle(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
+
         {/* <Link href="/inputSymbol">
           <a>Next</a>
         </Link> */}
