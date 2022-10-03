@@ -26,6 +26,9 @@ const InputSymbol: NextPage = () => {
         */}
       </Head>
       <div className="px-8">
+      <h1 className="pa-display">
+          Choose a<br></br>curation symbol
+        </h1>
         <Input
           label={'Input Title'}
           placeholder="e.g. $NEO"

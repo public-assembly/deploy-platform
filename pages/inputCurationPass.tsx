@@ -26,6 +26,9 @@ const InputCurationPass: NextPage = () => {
         */}
       </Head>
       <div className="px-8">
+        <h1 className="pa-display">
+          Designate your<br></br>curation pass
+        </h1>
         <Input
           label={'Input Curation Pass'}
           placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"

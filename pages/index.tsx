@@ -1,9 +1,21 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
-  
+  const router = useRouter()
+
+  const handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      router.push('/inputTitle')
+    }
+  }
+
+  const handleClick = (e: any) => {
+    router.push('/inputTitle')
+  }
+
   return (
     <div>
       <Head>
@@ -13,11 +25,20 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className='px-8'>
-      <Link href='inputTitle'>
-        <a className="pa-display">Create Platform</a>
-      </Link>
+      <div className="mx-8">
+        <h1 className="pa-display">
+          Create your<br></br>own platform
+        </h1>
+        <div className="mt-16">
+          <button className="" onClick={handleClick} onKeyPress={handleKeyPress}>
+            press <strong>`Enter`</strong> to continue
+          </button>
+        </div>
       </div>
+
+      {/* <Link href="/inputTitle">
+          <a>Next</a>
+        </Link> */}
     </div>
   )
 }

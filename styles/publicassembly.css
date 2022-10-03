@@ -38,3 +38,16 @@
   color: var(--pa__text-blue);
   text-decoration: underline;
 }
+
+/* COMPONENTS */
+.pa-input {
+  width: 100%;
+  height: 88px;
+  border: 4px solid black;
+}
+
+/* EXPERIMENTAL */
+::selection {
+  background-color: white;
+  color: var(--pa__pink);
+}

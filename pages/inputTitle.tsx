@@ -26,8 +26,16 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <h1 className="pa-header">Test</h1>
+
       <div className="px-8">
+        <h1 className="pa-display">
+          Give your<br></br>contract a title
+        </h1>
+        <p className="pa-paragraph mt-8">
+          Platforms that reference your contract will use this to provide a name for your
+          curation. This could be general like “Neosound”, or more specific like “Fall
+          Highlights."
+        </p>
         <Input
           label={'Input Title'}
           placeholder="e.g. Neosound"
