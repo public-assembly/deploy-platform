@@ -1,9 +1,49 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useFormStateProvider } from 'context'
+import { useAccount } from 'wagmi'
+import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
+
+type initialListings = (string | number | boolean)[][]
+
+const curatorFactoryAddress = '0x6d73186Ab623390a06cB2cD029AFadf7f953F2Dc'
+const initialPause = false
+const curationLimit = 0
+const metadataRenderer = '0xCc0C14AAf75041137E57061b78B324A0D2d65507'
+const metadataRendererInit = '0x0000000000000000000000000000000000000000000000000000000000000000'
+const initialListings = [] as initialListings
 
 const Deploy: NextPage = () => {
-  const { title, curationPass, media } = useFormStateProvider()
+  const { title, symbol, curationPass, media } = useFormStateProvider()
+  const { address } = useAccount()
+
+  const curationManagerAddress = address as string
+  const curatorTitle = title as string
+  const curatorSymbol = symbol as string
+  const tokenPassAddress = curationPass as string
+
+  const {
+    deployConfig,
+    deployConfigError,
+    deployWrite,
+    deployWriteError,
+    txnDeployStatus,
+  } = useCuratorFactory({
+    curatorFactoryAddress,
+    curationManagerAddress,
+    curatorTitle,
+    curatorSymbol,
+    tokenPassAddress,
+    initialPause,
+    curationLimit,
+    metadataRenderer,
+    metadataRendererInit,
+    initialListings,
+  })
+
+  console.log('Deploy Config: ', deployConfig)
+  console.log('Config Error: ', deployConfigError)
+  console.log('Write Error: ', deployWriteError)
 
   return (
     <div>
@@ -14,12 +54,15 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className='px-8 text-xl'>
+      <div className="px-8 text-xl">
         {title}
         <br></br>
         {curationPass}
         <br></br>
         {media}
+        <div className="mt-8">
+          <button onClick={() => deployWrite?.()}>Create Contract</button>
+        </div>
       </div>
     </div>
   )

@@ -5,15 +5,14 @@ import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
 
-const InputTitle: NextPage = () => {
+const InputSymbol: NextPage = () => {
   const router = useRouter()
 
-  const { title, setTitle } = useFormStateProvider()
-  console.log('title: ', title)
+  const { symbol, setSymbol } = useFormStateProvider()
 
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
-      router.push('/inputSymbol')
+      router.push('/inputCurationPass')
     }
   }
 
@@ -29,17 +28,20 @@ const InputTitle: NextPage = () => {
       <div className="px-8">
         <Input
           label={'Input Title'}
-          placeholder="e.g. Neosound"
-          onChange={(e: any) => setTitle(e.currentTarget.value)}
+          placeholder="e.g. $NEO"
+          onChange={(e: any) => setSymbol(e.currentTarget.value)}
           onKeyPress={handleKeyPress}
         />
         <br></br>
-        {/* <Link href="/inputSymbol">
+        {/* <Link href="/inputCurationPass">
           <a>Next</a>
         </Link> */}
+        <Link href="/inputTitle">
+          <a>Go Back</a>
+        </Link>
       </div>
     </div>
   )
 }
 
-export default InputTitle
+export default InputSymbol

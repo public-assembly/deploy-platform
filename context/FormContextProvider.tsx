@@ -7,9 +7,11 @@ export type FormStateProps = {
 export type FormStateReturnTypes = {
   title?: string
   setTitle?: any /* Specify Typings */
+  symbol?: string
+  setSymbol?: any /* Specify Typings */
   curationPass?: string
   setCurationPass?: any /* Specify Typings */
-  media?: string | string[]
+  media?: any /* Specify Typings */
   setMedia?: any /* Specify Typings */
 }
 
@@ -17,9 +19,11 @@ export type FormStateReturnTypes = {
 const FormStateContext = createContext<FormStateReturnTypes>({
   title: '',
   setTitle: () => {},
+  symbol: '',
+  setSymbol: () => {},
   curationPass: '',
   setCurationPass: () => {},
-  media: '',
+  media: [],
   setMedia: () => {},
 })
 
@@ -31,6 +35,7 @@ export function useFormStateProvider() {
 export function FormStateProvider({ children }: FormStateProps) {
   // These are the state values that will be given to the context
   const [title, setTitle] = useState('')
+  const [symbol, setSymbol] = useState('')
   const [curationPass, setCurationPass] = useState('')
   const [media, setMedia] = useState('')
 
@@ -40,6 +45,8 @@ export function FormStateProvider({ children }: FormStateProps) {
       value={{
         title,
         setTitle,
+        symbol,
+        setSymbol,
         curationPass,
         setCurationPass,
         media,
