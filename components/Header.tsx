@@ -2,8 +2,7 @@ import { ConnectButton } from './ConnectButton'
 
 export function Header() {
   return (
-    <header className="flex flex-row justify-between items-center w-full px-8">
-      <span className="text-2xl">Built by Public Assembly</span>
+    <header className="flex flex-row justify-end items-center w-full px-8">
       <ConnectButton />
     </header>
   )

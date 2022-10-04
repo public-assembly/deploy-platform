@@ -8,11 +8,18 @@
 }
 
 /* TYPOGRAPHY */
-.pa-display {
+.pa-displayDark {
   font-size: 12.5rem;
   line-height: 11.5rem;
   font-weight: 600;
-  /* color: var(--pa__text-dark); */
+  color: var(--pa__text-dark);
+}
+
+.pa-displayLight {
+  font-size: 12.5rem;
+  line-height: 11.5rem;
+  font-weight: 600;
+  color: var(--pa__text-light);
 }
 
 .pa-header {
