@@ -8,11 +8,18 @@
 }
 
 /* TYPOGRAPHY */
-.pa-display {
+.pa-displayDark {
   font-size: 12.5rem;
   line-height: 11.5rem;
   font-weight: 600;
-  /* color: var(--pa__text-dark); */
+  color: var(--pa__text-dark);
+}
+
+.pa-displayLight {
+  font-size: 12.5rem;
+  line-height: 11.5rem;
+  font-weight: 600;
+  color: var(--pa__text-light);
 }
 
 .pa-header {
@@ -37,4 +44,30 @@
   letter-spacing: 0.06rem;
   color: var(--pa__text-blue);
   text-decoration: underline;
+}
+
+/* COMPONENTS */
+.pa-input {
+  width: 65%;
+  height: 88px;
+  background: white;
+  border: 4px solid black;
+}
+
+input[type='text']:focus {
+  outline: 2px solid var(--pa__pink);
+}
+
+/* EXPERIMENTAL */
+/* ::selection {
+  background-color: white;
+  color: var(--pa__pink);
+} */
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }

@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
+import { Header } from 'components/Header'
 
 const InputTitle: NextPage = () => {
   const router = useRouter()
@@ -26,18 +26,23 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <h1 className="pa-header">Test</h1>
-      <div className="px-8">
-        <Input
-          label={'Input Title'}
-          placeholder="e.g. Neosound"
-          onChange={(e: any) => setTitle(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-        />
-        <br></br>
-        {/* <Link href="/inputSymbol">
-          <a>Next</a>
-        </Link> */}
+      <Header route="" />
+      <div className="mx-8 mt-32">
+        <h1 className="pa-displayDark unselectable">
+          Give your<br></br>contract a <span className="pa-displayLight">title</span>
+        </h1>
+        {/* <p className="pa-paragraph mt-8">
+          Platforms that reference your contract will use this to provide a name for your
+          curation. This could be general like &quot;Neosound&quot;, or more specific like
+          &quot;Fall Highlights.&quot;
+        </p> */}
+        <div className="mt-12">
+          <Input
+            placeholder="e.g. Neosound"
+            onChange={(e: any) => setTitle(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
       </div>
     </div>
   )

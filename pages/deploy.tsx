@@ -3,6 +3,8 @@ import Head from 'next/head'
 import { useFormStateProvider } from 'context'
 import { useAccount } from 'wagmi'
 import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
+import { IoIosArrowRoundForward } from 'react-icons/io'
+import { Header } from '../components/Header'
 
 type initialListings = (string | number | boolean)[][]
 
@@ -10,7 +12,8 @@ const curatorFactoryAddress = '0x6d73186Ab623390a06cB2cD029AFadf7f953F2Dc'
 const initialPause = false
 const curationLimit = 0
 const metadataRenderer = '0xCc0C14AAf75041137E57061b78B324A0D2d65507'
-const metadataRendererInit = '0x0000000000000000000000000000000000000000000000000000000000000000'
+const metadataRendererInit =
+  '0x0000000000000000000000000000000000000000000000000000000000000000'
 const initialListings = [] as initialListings
 
 const Deploy: NextPage = () => {
@@ -54,14 +57,27 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className="px-8 text-xl">
-        {title}
-        <br></br>
-        {curationPass}
-        <br></br>
-        {media}
-        <div className="mt-8">
-          <button onClick={() => deployWrite?.()}>Create Contract</button>
+      <Header route="" />
+      <div className="mx-8 py-32">
+        <h1 className="pa-displayDark">
+          Ready to curate<br></br>
+          <span className="pa-displayLight">{title}?</span>
+        </h1>
+        <div></div>
+        <div className="flex w-full justify-end pt-24 pr-16">
+          <div className="flex items-center">
+            <div className="mr-2 mt-2">
+              <IoIosArrowRoundForward size={32} />
+            </div>
+            <button
+              className="pa-paragraph"
+              onClick={() => deployWrite?.()}
+              // onKeyDown={handleKeyDown}
+            >
+              <strong className="text-[#0c1413] hover:text-[#ecf1f0]">Deploy</strong> your
+              contract
+            </button>
+          </div>
         </div>
       </div>
     </div>

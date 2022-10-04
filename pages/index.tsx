@@ -1,9 +1,22 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
+import { IoMdReturnRight } from 'react-icons/io'
+import { useRouter } from 'next/router'
+import { Header } from 'components/Header'
 
 const Home: NextPage = () => {
-  
+  const router = useRouter()
+
+  const handleKeyDown = (e: any) => {
+    if (e.key === 'Enter') {
+      router.push('/inputTitle')
+    }
+  }
+
+  const handleClick = (e: any) => {
+    router.push('/inputTitle')
+  }
+
   return (
     <div>
       <Head>
@@ -13,10 +26,26 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className='px-8'>
-      <Link href='inputTitle'>
-        <a className="pa-display">Create Platform</a>
-      </Link>
+      <Header route='' />
+      <div className="mx-8 py-32">
+        <h1 className="pa-displayDark">
+          Create your<br></br>own <span className="pa-displayLight">platform</span>
+        </h1>
+        <div className="flex w-full justify-end pt-24 pr-16">
+          <div className="flex items-center">
+            <div className="mr-2 mt-2">
+              <IoMdReturnRight size={32} />
+            </div>
+            <button
+              className="pa-paragraph"
+              onClick={handleClick}
+              onKeyDown={handleKeyDown}>
+              press{' '}
+              <strong className="text-[#0c1413] hover:text-[#ecf1f0]">`Enter`</strong> to
+              continue
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )
