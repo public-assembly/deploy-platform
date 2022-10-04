@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { IoMdReturnRight } from 'react-icons/io'
 import { useRouter } from 'next/router'
+import { Header } from 'components/Header'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
+      <Header route='' />
       <div className="mx-8 py-32">
         <h1 className="pa-displayDark">
           Create your<br></br>own <span className="pa-displayLight">platform</span>

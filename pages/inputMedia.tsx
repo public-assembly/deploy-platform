@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Input } from 'components/Input'
 import { useRouter } from 'next/router'
 import { useFormStateProvider } from 'context'
+import { Header } from 'components/Header'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
@@ -25,22 +25,18 @@ const InputMedia: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className="px-8">
-        <h1 className="pa-display">Input initial media</h1>
-        <Input
-          label={'Input Media'}
-          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-          // value={currentTitle}
-          onChange={(e: any) => setMedia(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-        />
-        {/* <Link href="/inputCurationPass">
-          <a>Next</a>
-        </Link> */}
-        <br></br>
-        <Link href="/inputCurationPass">
-          <a>Go Back</a>
-        </Link>
+      <Header route={'./inputCurationPass'} />
+      <div className="mx-8 mt-32">
+        <h1 className="pa-displayDark unselectable">
+          Add your <br></br>first <span className="pa-displayLight">songs</span>
+        </h1>
+        <div className="mt-12">
+          <Input
+            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+            onChange={(e: any) => setMedia(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
       </div>
     </div>
   )

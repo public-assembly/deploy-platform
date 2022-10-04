@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Input } from 'components/Input'
 import { useRouter } from 'next/router'
 import { useFormStateProvider } from 'context'
+import { Header } from 'components/Header'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
@@ -25,23 +25,18 @@ const InputCurationPass: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className="px-8">
-        <h1 className="pa-display">
-          Designate your<br></br>curation pass
+      <Header route={'./inputSymbol'} />
+      <div className="mx-8 mt-32">
+        <h1 className="pa-displayDark unselectable">
+          Designate your<br></br>curation <span className="pa-displayLight">pass</span>
         </h1>
-        <Input
-          label={'Input Curation Pass'}
-          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-          onChange={(e: any) => setCurationPass(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-        />
-        {/* <Link href="/inputCurationPass">
-          <a>Next</a>
-        </Link> */}
-        <br></br>
-        <Link href="/inputSymbol">
-          <a>Go Back</a>
-        </Link>
+        <div className="mt-12">
+          <Input
+            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+            onChange={(e: any) => setCurationPass(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
       </div>
     </div>
   )

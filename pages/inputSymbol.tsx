@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
+import { Header } from '../components/Header'
 
 const InputSymbol: NextPage = () => {
   const router = useRouter()
@@ -25,23 +25,18 @@ const InputSymbol: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <div className="px-8">
-      <h1 className="pa-display">
-          Choose a<br></br>curation symbol
+      <Header route={'./inputTitle'} />
+      <div className="mx-8 mt-32">
+        <h1 className="pa-displayDark unselectable">
+          Choose a<br></br>curation <span className="pa-displayLight">symbol</span>
         </h1>
-        <Input
-          label={'Input Title'}
-          placeholder="e.g. $NEO"
-          onChange={(e: any) => setSymbol(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-        />
-        <br></br>
-        {/* <Link href="/inputCurationPass">
-          <a>Next</a>
-        </Link> */}
-        <Link href="/inputTitle">
-          <a>Go Back</a>
-        </Link>
+        <div className="mt-12">
+          <Input
+            placeholder="e.g. $NEO"
+            onChange={(e: any) => setSymbol(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
       </div>
     </div>
   )
