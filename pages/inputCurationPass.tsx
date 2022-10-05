@@ -30,7 +30,7 @@ const InputCurationPass: NextPage = () => {
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Designate a<br></br>curation <span className="pa-displayLight">pass</span>
         </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl max-h-[72px]">
+        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
           This is the contract address of the editions NFT that will be used to gate
           access to curation functionality. If you haven&apos;t already created one of these,{' '}
           <a

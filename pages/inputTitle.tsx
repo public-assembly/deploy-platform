@@ -31,7 +31,7 @@ const InputTitle: NextPage = () => {
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Give your<br></br>contract a <span className="pa-displayLight">title</span>
         </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl max-h-[72px]">
+        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl ">
           This is how your contract will be referenced. Your free to provide a more
           general name like &quot;Neosound&quot;, or one more specific like &quot;Down Bad
           Pt. 2.&quot;

@@ -30,7 +30,7 @@ const InputSymbol: NextPage = () => {
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Choose a<br></br>curation <span className="pa-displayLight">symbol</span>
         </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl max-h-[72px]">
+        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
           Your contract symbol can be used to distinguish your contract from those of
           other creators. Try using the first few characters of your contract title or
           maybe removing all the vowels.

@@ -30,10 +30,10 @@ const InputMedia: NextPage = () => {
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Add your <br></br>first <span className="pa-displayLight">songs</span>
         </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl max-h-[72px]">
-          If you&apos;ve already decided on media you want to curate, you can one by one add
-          the addresses of those NFTs below. If you&apos;re not quite sure what you want to
-          include, skip ahead and add content later.
+        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
+          If you&apos;ve already decided on what you want to curate, you can add the
+          addresses of those NFTs below. If you&apos;re not quite sure what you want to
+          include, skip ahead!
         </p>
         <div className="mt-4 sm:mt-28">
           <Input
