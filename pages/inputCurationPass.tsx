@@ -32,11 +32,12 @@ const InputCurationPass: NextPage = () => {
         </h1>
         <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl max-h-[72px]">
           This is the contract address of the editions NFT that will be used to gate
-          access to curation functionality. If you haven't already created one of these,{' '}
+          access to curation functionality. If you haven&apos;t already created one of these,{' '}
           <a
             className="underline text-[#006ff1] hover:text-[#0c1413]"
             href="https://create.zora.co/create/edition"
-            target="_blank">
+            target="_blank"
+            rel="noreferrer">
             make one here
           </a>
           .
