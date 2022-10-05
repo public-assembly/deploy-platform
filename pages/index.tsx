@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       </Head>
       <Header route='' />
       <div className="mx-8 py-32">
-        <h1 className="pa-displayDark">
+        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Create your<br></br>own <span className="pa-displayLight">platform</span>
         </h1>
         <div className="flex w-full justify-end pt-24 pr-16">
@@ -37,7 +37,7 @@ const Home: NextPage = () => {
               <IoMdReturnRight size={32} />
             </div>
             <button
-              className="pa-paragraph"
+              className="pa-paragraph text-xl sm:text-2xl"
               onClick={handleClick}
               onKeyDown={handleKeyDown}>
               press{' '}
