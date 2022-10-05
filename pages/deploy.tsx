@@ -66,7 +66,7 @@ const Deploy: NextPage = () => {
         <div></div>
         <div className="flex w-full justify-end pt-24 pr-16">
           <div className="flex items-center">
-            <div className="mr-2 mt-1">
+            <div className="mr-1 mt-1">
               <IoIosArrowRoundForward size={48} />
             </div>
             <button

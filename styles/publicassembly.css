@@ -38,8 +38,8 @@
 }
 
 .pa-paragraphLink {
-  font-size: 1.75rem;
-  line-height: 2.5rem;
+  /* font-size: 1.75rem;
+  line-height: 2.5rem; */
   font-weight: 400;
   letter-spacing: 0.06rem;
   color: var(--pa__text-blue);

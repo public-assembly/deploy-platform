@@ -27,16 +27,16 @@ const InputTitle: NextPage = () => {
         */}
       </Head>
       <Header route="" />
-      <div className="mx-8 mt-32">
+      <div className="mx-8 mt-24">
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Give your<br></br>contract a <span className="pa-displayLight">title</span>
         </h1>
-        {/* <p className="pa-paragraph mt-8">
-          Platforms that reference your contract will use this to provide a name for your
-          curation. This could be general like &quot;Neosound&quot;, or more specific like
-          &quot;Fall Highlights.&quot;
-        </p> */}
-        <div className="mt-4 sm:mt-12">
+        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl max-h-[72px]">
+          This is how your contract will be referenced. Your free to provide a more
+          general name like &quot;Neosound&quot;, or one more specific like &quot;Down Bad
+          Pt. 2.&quot;
+        </p>
+        <div className="mt-4 sm:mt-28">
           <Input
             placeholder="e.g. Neosound"
             onChange={(e: any) => setTitle(e.currentTarget.value)}
