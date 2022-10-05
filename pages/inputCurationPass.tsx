@@ -27,10 +27,10 @@ const InputCurationPass: NextPage = () => {
       </Head>
       <Header route={'./inputSymbol'} />
       <div className="mx-8 mt-32">
-        <h1 className="pa-displayDark unselectable">
+        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Designate your<br></br>curation <span className="pa-displayLight">pass</span>
         </h1>
-        <div className="mt-12">
+        <div className="mt-4 sm:mt-12">
           <Input
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
             onChange={(e: any) => setCurationPass(e.currentTarget.value)}

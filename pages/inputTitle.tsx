@@ -28,7 +28,7 @@ const InputTitle: NextPage = () => {
       </Head>
       <Header route="" />
       <div className="mx-8 mt-32">
-        <h1 className="pa-displayDark unselectable">
+        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Give your<br></br>contract a <span className="pa-displayLight">title</span>
         </h1>
         {/* <p className="pa-paragraph mt-8">
@@ -36,7 +36,7 @@ const InputTitle: NextPage = () => {
           curation. This could be general like &quot;Neosound&quot;, or more specific like
           &quot;Fall Highlights.&quot;
         </p> */}
-        <div className="mt-12">
+        <div className="mt-4 sm:mt-12">
           <Input
             placeholder="e.g. Neosound"
             onChange={(e: any) => setTitle(e.currentTarget.value)}

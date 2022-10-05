@@ -59,20 +59,19 @@ const Deploy: NextPage = () => {
       </Head>
       <Header route="" />
       <div className="mx-8 py-32">
-        <h1 className="pa-displayDark">
+        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Ready to curate<br></br>
           <span className="pa-displayLight">{title}?</span>
         </h1>
         <div></div>
         <div className="flex w-full justify-end pt-24 pr-16">
           <div className="flex items-center">
-            <div className="mr-2 mt-2">
-              <IoIosArrowRoundForward size={32} />
+            <div className="mr-2 mt-1">
+              <IoIosArrowRoundForward size={48} />
             </div>
             <button
-              className="pa-paragraph"
+              className="pa-paragraph text-xl sm:text-2xl"
               onClick={() => deployWrite?.()}
-              // onKeyDown={handleKeyDown}
             >
               <strong className="text-[#0c1413] hover:text-[#ecf1f0]">Deploy</strong> your
               contract
