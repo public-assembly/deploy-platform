@@ -6,15 +6,15 @@ import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 
-type initialListings = (string | number | boolean)[][]
+// type initialListings = (string | number | boolean)[][]
 
-const curatorFactoryAddress = '0x6d73186Ab623390a06cB2cD029AFadf7f953F2Dc'
+// Goerli curator factory address
+const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
 const initialPause = false
 const curationLimit = 0
 const metadataRenderer = '0xCc0C14AAf75041137E57061b78B324A0D2d65507'
 const metadataRendererInit =
   '0x0000000000000000000000000000000000000000000000000000000000000000'
-const initialListings = [] as initialListings
 
 const Deploy: NextPage = () => {
   const { title, symbol, curationPass, media } = useFormStateProvider()
@@ -24,6 +24,19 @@ const Deploy: NextPage = () => {
   const curatorTitle = title as string
   const curatorSymbol = symbol as string
   const tokenPassAddress = curationPass as string
+  const initialListings = [
+    Object.values({
+      curatedAddress: media,
+      selectedTokenId: 0,
+      curator: address,
+      curationTargetType: 1,
+      sortOrder: 0,
+      hasTokenId: false,
+      chainId: 4,
+    }),
+  ]
+
+  console.log(initialListings)
 
   const {
     deployConfig,
@@ -71,8 +84,7 @@ const Deploy: NextPage = () => {
             </div>
             <button
               className="pa-paragraph text-xl sm:text-2xl"
-              onClick={() => deployWrite?.()}
-            >
+              onClick={() => deployWrite?.()}>
               <strong className="text-[#0c1413] hover:text-[#ecf1f0]">Deploy</strong> your
               contract
             </button>
