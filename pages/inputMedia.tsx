@@ -7,6 +7,7 @@ import { Header } from 'components/Header'
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { HeroText } from 'components/HeroText'
+import { ContinueButton } from 'components/ContinueButton'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
@@ -45,7 +46,11 @@ const InputMedia: NextPage = () => {
       <Header route={'./inputCurationPass'} />
       <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
         <HeroText
-          text={<>Add your <br className="hidden sm:block"></br>first</>}
+          text={
+            <>
+              Add your <br className="hidden sm:block"></br>first
+            </>
+          }
           highlight=" songs"
         />
         <div>
@@ -59,13 +64,15 @@ const InputMedia: NextPage = () => {
               skip ahead!
             </button>
           </p>
-
-          <Input
-            value={media}
-            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-          />
+          <div className="flex items-center">
+            <Input
+              value={media}
+              placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+              onChange={handleChange}
+              onKeyPress={handleKeyPress}
+            />
+            <ContinueButton route={'./deploy'} />
+          </div>
         </div>
       </div>
     </div>

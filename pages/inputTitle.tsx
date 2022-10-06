@@ -5,6 +5,7 @@ import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
 import { HeroText } from 'components/HeroText'
+import { ContinueButton } from 'components/ContinueButton'
 
 const InputTitle: NextPage = () => {
   const router = useRouter()
@@ -43,12 +44,15 @@ const InputTitle: NextPage = () => {
             general name like &quot;Neosound&quot;, or one more specific like &quot;Down
             Bad Pt. 2.&quot;
           </p>
-          <Input
-            value={title}
-            placeholder={'e.g. Neosound'}
-            onChange={(e: any) => setTitle(e.currentTarget.value)}
-            onKeyPress={handleKeyPress}
-          />
+          <div className="flex items-center">
+            <Input
+              value={title}
+              placeholder={'e.g. Neosound'}
+              onChange={(e: any) => setTitle(e.currentTarget.value)}
+              onKeyPress={handleKeyPress}
+            />
+            <ContinueButton route={'./inputSymbol'} />
+          </div>
         </div>
       </div>
     </div>
