@@ -6,6 +6,7 @@ import { useFormStateProvider } from 'context'
 import { Header } from 'components/Header'
 import { ethers } from 'ethers'
 import { useState } from 'react'
+import { HeroText } from 'components/HeroText'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
@@ -42,23 +43,25 @@ const InputCurationPass: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputSymbol'} />
-      <div className="mx-8 mt-24">
-        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
-          Designate a<br></br>curation <span className="pa-displayLight">pass</span>
-        </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
-          This is the contract address of the editions NFT that will be used to gate
-          access to curation functionality. If you haven&apos;t already created one of
-          these,{' '}
-          <a
-            className="underline text-[#006ff1] hover:text-[#0c1413]"
-            href="https://create.zora.co/create/edition"
-            target="_blank"
-            rel="noreferrer">
-            make one here
-          </a>
-        </p>
+      <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
+        <HeroText
+          text={['Designate a ', <br className="hidden sm:block"></br>, 'curation ']}
+          highlight="pass"
+        />
         <div>
+          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
+            This is the contract address of the editions NFT that will be used to gate
+            access to curation functionality. If you haven&apos;t already created one of
+            these,{' '}
+            <a
+              className="underline text-[#006ff1] hover:text-[#0c1413]"
+              href="https://create.zora.co/create/edition"
+              target="_blank"
+              rel="noreferrer">
+              make one here
+            </a>
+          </p>
+
           <Input
             value={curationPass}
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
