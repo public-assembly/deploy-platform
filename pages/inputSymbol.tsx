@@ -37,6 +37,7 @@ const InputSymbol: NextPage = () => {
         </p>
         <div className="mt-4 sm:mt-20">
           <Input
+            value={symbol}
             placeholder="e.g. $NEO"
             onChange={(e: any) => setSymbol(e.currentTarget.value)}
             onKeyPress={handleKeyPress}
