@@ -35,7 +35,7 @@ const InputSymbol: NextPage = () => {
           other creators. Try using the first few characters of your contract title or
           maybe removing all the vowels.
         </p>
-        <div className="mt-4 sm:mt-28">
+        <div className="mt-4 sm:mt-20">
           <Input
             placeholder="e.g. $NEO"
             onChange={(e: any) => setSymbol(e.currentTarget.value)}

@@ -1,3 +1,5 @@
+import { InputError } from './InputError'
+
 type InputProps = {
   placeholder?: string
   value?: string

@@ -4,15 +4,31 @@ import { Input } from 'components/Input'
 import { useRouter } from 'next/router'
 import { useFormStateProvider } from 'context'
 import { Header } from 'components/Header'
+import { useState } from 'react'
+import { ethers } from 'ethers'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
 
   const { media, setMedia } = useFormStateProvider()
+  const [validMedia, setValidMedia] = useState(false)
+
+  const handleChange = (e: any) => {
+    setMedia(e.currentTarget.value)
+  }
+
+  const handleValidation = () => {
+    if (media != null && ethers.utils.isAddress(media)) {
+      setValidMedia(true)
+      router.push('/deploy')
+    } else {
+      setValidMedia(false)
+    }
+  }
 
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
-      router.push('/deploy')
+      handleValidation()
     }
   }
 
@@ -35,10 +51,10 @@ const InputMedia: NextPage = () => {
           addresses of those NFTs below. If you&apos;re not quite sure what you want to
           include, skip ahead!
         </p>
-        <div className="mt-4 sm:mt-28">
+        <div className="mt-4 sm:mt-20">
           <Input
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-            onChange={(e: any) => setMedia(e.currentTarget.value)}
+            onChange={handleChange}
             onKeyPress={handleKeyPress}
           />
         </div>
