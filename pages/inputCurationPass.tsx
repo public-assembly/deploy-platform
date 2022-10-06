@@ -7,6 +7,7 @@ import { Header } from 'components/Header'
 import { ethers } from 'ethers'
 import { useState } from 'react'
 import { HeroText } from 'components/HeroText'
+import { ContinueButton } from 'components/ContinueButton'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
@@ -45,7 +46,11 @@ const InputCurationPass: NextPage = () => {
       <Header route={'./inputSymbol'} />
       <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
         <HeroText
-          text={<>Designate a <br className="hidden sm:block"></br>curation</>}
+          text={
+            <>
+              Designate a <br className="hidden sm:block"></br>curation
+            </>
+          }
           highlight=" pass"
         />
         <div>
@@ -61,13 +66,15 @@ const InputCurationPass: NextPage = () => {
               make one here
             </a>
           </p>
-
-          <Input
-            value={curationPass}
-            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-          />
+          <div className="flex items-center">
+            <Input
+              value={curationPass}
+              placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+              onChange={handleChange}
+              onKeyPress={handleKeyPress}
+            />
+            <ContinueButton route={'./inputMedia'} />
+          </div>
           {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />
         )} */}
