@@ -38,7 +38,8 @@ const InputTitle: NextPage = () => {
         </p>
         <div className="mt-4 sm:mt-20">
           <Input
-            placeholder="e.g. Neosound"
+            value={title}
+            placeholder={'e.g. Neosound'}
             onChange={(e: any) => setTitle(e.currentTarget.value)}
             onKeyPress={handleKeyPress}
           />
