@@ -70,7 +70,7 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="" />
+      <Header route="./inputMedia" />
       <div className="mx-8 py-32">
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Ready to curate<br></br>
