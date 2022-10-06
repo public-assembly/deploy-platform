@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { IoMdReturnRight } from 'react-icons/io'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
+import { HeroText } from 'components/HeroText'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -28,9 +29,10 @@ const Home: NextPage = () => {
       </Head>
       <Header route='' />
       <div className="mx-6 mt-20 sm:mt-16 sm:mx-8">
-        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
-          Create your<br></br>own <span className="pa-displayLight">platform</span>
-        </h1>
+        <HeroText
+          text={<>Create your <br className="hidden sm:block"></br>own</>}
+          highlight=" platform"
+        />
         <div className="flex w-full justify-end pt-32 pr-16">
           <div className="flex items-center">
             <div className="mr-2 mt-2">

@@ -5,8 +5,7 @@ import { useAccount } from 'wagmi'
 import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
-
-// type initialListings = (string | number | boolean)[][]
+import { HeroText } from 'components/HeroText'
 
 // Goerli curator factory address
 const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
@@ -35,8 +34,6 @@ const Deploy: NextPage = () => {
       chainId: 4,
     }),
   ]
-
-  console.log(initialListings)
 
   const {
     deployConfig,
@@ -72,10 +69,14 @@ const Deploy: NextPage = () => {
       </Head>
       <Header route="./inputMedia" />
       <div className="mx-6 mt-20 sm:mt-16 sm:mx-8">
-        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
-          Ready to curate<br></br>
-          <span className="pa-displayLight">{title}?</span>
-        </h1>
+        <HeroText
+          text={
+            <>
+              Ready to curate&nbsp;
+            </>
+          }
+          highlight={`${title}?`}
+        />
         <div></div>
         <div className="flex w-full justify-end pt-24 pr-16">
           <div className="flex items-center">
