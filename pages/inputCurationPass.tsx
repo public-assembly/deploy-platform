@@ -4,15 +4,32 @@ import { Input } from 'components/Input'
 import { useRouter } from 'next/router'
 import { useFormStateProvider } from 'context'
 import { Header } from 'components/Header'
+import { ethers } from 'ethers'
+import { useState } from 'react'
+import { InputError } from 'components/InputError'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
 
   const { curationPass, setCurationPass } = useFormStateProvider()
+  const [validAddress, setValidAddress] = useState(false)
+
+  const handleChange = (e: any) => {
+    setCurationPass(e.currentTarget.value)
+  }
+
+  const handleValidation = () => {
+    if (curationPass != null && ethers.utils.isAddress(curationPass)) {
+      setValidAddress(true)
+      router.push('/inputMedia')
+    } else {
+      setValidAddress(false)
+    }
+  }
 
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
-      router.push('/inputMedia')
+      handleValidation()
     }
   }
 
@@ -32,7 +49,8 @@ const InputCurationPass: NextPage = () => {
         </h1>
         <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
           This is the contract address of the editions NFT that will be used to gate
-          access to curation functionality. If you haven&apos;t already created one of these,{' '}
+          access to curation functionality. If you haven&apos;t already created one of
+          these,{' '}
           <a
             className="underline text-[#006ff1] hover:text-[#0c1413]"
             href="https://create.zora.co/create/edition"
@@ -40,14 +58,17 @@ const InputCurationPass: NextPage = () => {
             rel="noreferrer">
             make one here
           </a>
-          .
         </p>
-        <div className="mt-4 sm:mt-28">
+
+        <div className="flex flex-wrap mt-4 sm:mt-20 flex items-center gap-8">
           <Input
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-            onChange={(e: any) => setCurationPass(e.currentTarget.value)}
+            onChange={handleChange}
             onKeyPress={handleKeyPress}
           />
+          {/* {!validAddress && (
+          <InputError errorMessage={'Please enter a valid NFT contract address'} />
+        )} */}
         </div>
       </div>
     </div>
