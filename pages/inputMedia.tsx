@@ -35,7 +35,7 @@ const InputMedia: NextPage = () => {
           addresses of those NFTs below. If you&apos;re not quite sure what you want to
           include, skip ahead!
         </p>
-        <div className="mt-4 sm:mt-28">
+        <div className="mt-4 sm:mt-20">
           <Input
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
             onChange={(e: any) => setMedia(e.currentTarget.value)}

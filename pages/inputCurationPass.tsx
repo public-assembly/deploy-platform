@@ -60,7 +60,7 @@ const InputCurationPass: NextPage = () => {
           </a>
         </p>
 
-        <div className="flex flex-wrap mt-4 sm:mt-20 flex items-center gap-8">
+        <div className="mt-4 sm:mt-20">
           <Input
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
             onChange={handleChange}
