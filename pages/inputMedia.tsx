@@ -54,7 +54,7 @@ const InputMedia: NextPage = () => {
             skip ahead!
           </button>
         </p>
-        <div className="mt-4 sm:mt-20">
+        <div>
           <Input
             value={media}
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"

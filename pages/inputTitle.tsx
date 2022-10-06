@@ -36,7 +36,7 @@ const InputTitle: NextPage = () => {
           general name like &quot;Neosound&quot;, or one more specific like &quot;Down Bad
           Pt. 2.&quot;
         </p>
-        <div className="mt-4 sm:mt-20">
+        <div>
           <Input
             value={title}
             placeholder={'e.g. Neosound'}

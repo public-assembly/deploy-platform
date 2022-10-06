@@ -58,8 +58,7 @@ const InputCurationPass: NextPage = () => {
             make one here
           </a>
         </p>
-
-        <div className="mt-4 sm:mt-20">
+        <div>
           <Input
             value={curationPass}
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
