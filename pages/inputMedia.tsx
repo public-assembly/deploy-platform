@@ -45,8 +45,8 @@ const InputMedia: NextPage = () => {
       <Header route={'./inputCurationPass'} />
       <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
         <HeroText
-          text={['Add your ', <br className="hidden sm:block"></br>, 'first ']}
-          highlight="songs"
+          text={<>Add your <br className="hidden sm:block"></br>first</>}
+          highlight=" songs"
         />
         <div>
           <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">

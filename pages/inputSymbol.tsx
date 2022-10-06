@@ -29,8 +29,8 @@ const InputSymbol: NextPage = () => {
       <Header route={'./inputTitle'} />
       <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
         <HeroText
-          text={['Choose a ', <br className="hidden sm:block"></br>, 'curation ']}
-          highlight="symbol"
+          text={<>Choose a <br className="hidden sm:block"></br>curation</>}
+          highlight=" symbol"
         />
         <div>
           <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
