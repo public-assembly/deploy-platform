@@ -6,6 +6,7 @@ import { useFormStateProvider } from 'context'
 import { Header } from 'components/Header'
 import { useState } from 'react'
 import { ethers } from 'ethers'
+import { HeroText } from 'components/HeroText'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
@@ -42,19 +43,23 @@ const InputMedia: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputCurationPass'} />
-      <div className="mx-8 mt-24">
-        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
-          Add your <br></br>first <span className="pa-displayLight">songs</span>
-        </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
-          If you&apos;ve already decided on what you want to curate, you can add the
-          addresses of those NFTs below. If you&apos;re not quite sure what you want to
-          include,{' '}
-          <button onClick={() => router.push('/deploy')} className="underline text-[#006ff1] hover:text-[#0c1413]">
-            skip ahead!
-          </button>
-        </p>
-        <div className="mt-4 sm:mt-20">
+      <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
+        <HeroText
+          text={<>Add your <br className="hidden sm:block"></br>first</>}
+          highlight=" songs"
+        />
+        <div>
+          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
+            If you&apos;ve already decided on what you want to curate, you can add the
+            addresses of those NFTs below. If you&apos;re not quite sure what you want to
+            include,{' '}
+            <button
+              onClick={() => router.push('/deploy')}
+              className="underline text-[#006ff1] hover:text-[#0c1413]">
+              skip ahead!
+            </button>
+          </p>
+
           <Input
             value={media}
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"

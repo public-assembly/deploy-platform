@@ -51,7 +51,10 @@
   /* width: 65%; */
   /* height: 88px; */
   background: white;
-  border: 4px solid black;
+  border-color: var(--pa__text-dark);
+  border-style: solid;
+  border-width: 0px 0px 4px 0px;
+  /* border: 0px 0px 0px 4px solid black; */
 }
 
 input[type='text']:focus {

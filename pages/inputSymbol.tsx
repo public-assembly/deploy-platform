@@ -4,6 +4,7 @@ import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
 import { Header } from '../components/Header'
+import { HeroText } from 'components/HeroText'
 
 const InputSymbol: NextPage = () => {
   const router = useRouter()
@@ -26,16 +27,17 @@ const InputSymbol: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputTitle'} />
-      <div className="mx-8 mt-24">
-        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
-          Choose a<br></br>curation <span className="pa-displayLight">symbol</span>
-        </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
-          Your contract symbol can be used to distinguish your contract from those of
-          other creators. Try using the first few characters of your contract title or
-          maybe removing all the vowels.
-        </p>
-        <div className="mt-4 sm:mt-20">
+      <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
+        <HeroText
+          text={<>Choose a <br className="hidden sm:block"></br>curation</>}
+          highlight=" symbol"
+        />
+        <div>
+          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
+            Your contract symbol can be used to distinguish your contract from those of
+            other creators. Try using the first few characters of your contract title or
+            maybe removing all the vowels.
+          </p>
           <Input
             value={symbol}
             placeholder="e.g. $NEO"

@@ -12,7 +12,9 @@ export const BackButton = ({ route }: BackButtonProps) => {
         <button>
           <div className="flex items-center hover:text-white">
             <IoIosArrowBack size={32} />
-            <span className="pa-paragraph mb-0.5 mx-2 text-xl sm:text-2xl">Go Back</span>
+            <span className="hidden pa-paragraph mb-0.5 mx-2 text-xl sm:text-2xl sm:inline sm:mb-0">
+              Go Back
+            </span>
           </div>
         </button>
       </a>

@@ -4,6 +4,7 @@ import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
+import { HeroText } from 'components/HeroText'
 
 const InputTitle: NextPage = () => {
   const router = useRouter()
@@ -27,16 +28,21 @@ const InputTitle: NextPage = () => {
         */}
       </Head>
       <Header route="" />
-      <div className="mx-8 mt-24">
-        <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
-          Give your<br></br>contract a <span className="pa-displayLight">title</span>
-        </h1>
-        <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl ">
-          This is how your contract will be referenced. Your free to provide a more
-          general name like &quot;Neosound&quot;, or one more specific like &quot;Down Bad
-          Pt. 2.&quot;
-        </p>
-        <div className="mt-4 sm:mt-20">
+      <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
+        <HeroText
+          text={
+            <>
+              Give your <br className="hidden sm:block"></br>contract a
+            </>
+          }
+          highlight=" title"
+        />
+        <div>
+          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
+            This is how your contract will be referenced. Your free to provide a more
+            general name like &quot;Neosound&quot;, or one more specific like &quot;Down
+            Bad Pt. 2.&quot;
+          </p>
           <Input
             value={title}
             placeholder={'e.g. Neosound'}

@@ -71,7 +71,7 @@ const Deploy: NextPage = () => {
         */}
       </Head>
       <Header route="./inputMedia" />
-      <div className="mx-8 py-32">
+      <div className="mx-6 mt-20 sm:mt-16 sm:mx-8">
         <h1 className="pa-displayDark unselectable text-5xl md:text-9xl lg:text-12xl">
           Ready to curate<br></br>
           <span className="pa-displayLight">{title}?</span>
