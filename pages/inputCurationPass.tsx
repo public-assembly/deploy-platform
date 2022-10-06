@@ -6,7 +6,6 @@ import { useFormStateProvider } from 'context'
 import { Header } from 'components/Header'
 import { ethers } from 'ethers'
 import { useState } from 'react'
-import { InputError } from 'components/InputError'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
