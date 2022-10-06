@@ -49,7 +49,10 @@ const InputMedia: NextPage = () => {
         <p className="pa-paragraph text-xl mt-8 mb-8 sm:text-3xl max-w-7xl">
           If you&apos;ve already decided on what you want to curate, you can add the
           addresses of those NFTs below. If you&apos;re not quite sure what you want to
-          include, skip ahead!
+          include,{' '}
+          <button onClick={() => router.push('/deploy')} className="underline text-[#006ff1] hover:text-[#0c1413]">
+            skip ahead!
+          </button>
         </p>
         <div className="mt-4 sm:mt-20">
           <Input
