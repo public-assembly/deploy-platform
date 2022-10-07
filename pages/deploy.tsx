@@ -7,9 +7,8 @@ import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 
-// type initialListings = any[]
+type initialListings = any[]
 
-// Goerli curator factory address
 const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
 const initialPause = false
 const curationLimit = 0
@@ -24,34 +23,23 @@ const Deploy: NextPage = () => {
   const curatorTitle = title as string
   const curatorSymbol = symbol as string
   const tokenPassAddress = curationPass as string
-  const initialListings = [
-    Object.values({
-      curatedAddress: media,
-      selectedTokenId: 0,
-      curator: address,
-      curationTargetType: 1,
-      sortOrder: 0,
-      hasTokenId: false,
-      chainId: 4,
-    }),
-  ]
-  // const initialListings = [] as initialListings
+  const initialListings = [] as initialListings
 
-  // if ((media as string) == '') {
-  //   initialListings.push('')
-  // } else {
-  //   initialListings.push([
-  //     Object.values({
-  //       curatedAddress: media,
-  //       selectedTokenId: 0,
-  //       curator: address,
-  //       curationTargetType: 1,
-  //       sortOrder: 0,
-  //       hasTokenId: false,
-  //       chainId: 4,
-  //     }),
-  //   ])
-  // }
+  if (media != '') {
+    initialListings.push(
+      Object.values({
+        curatedAddress: media,
+        selectedTokenId: 0,
+        curator: address,
+        curationTargetType: 1,
+        sortOrder: 0,
+        hasTokenId: false,
+        chainId: 4,
+      })
+    )
+  }
+
+  console.log(initialListings)
 
   const {
     deployConfig,
