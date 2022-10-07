@@ -33,7 +33,7 @@ const InputTitle: NextPage = () => {
         <HeroText
           text={
             <>
-              Give your <br className="hidden sm:block"></br>contract a
+              Each contract<br className="hidden sm:block"></br> needs a
             </>
           }
           highlight=" title"
