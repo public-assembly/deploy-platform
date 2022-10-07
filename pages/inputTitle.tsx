@@ -29,7 +29,7 @@ const InputTitle: NextPage = () => {
         */}
       </Head>
       <Header route="" />
-      <div className="flex flex-col gap-2 mx-6 mt-20 sm:mt-16 sm:mx-8 sm:gap-8">
+      <div className="flex flex-col gap-2 mx-6 mt-12 sm:mt-16 sm:mx-8 sm:gap-8">
         <HeroText
           text={
             <>
