@@ -1,6 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { IoMdReturnRight } from 'react-icons/io'
+import Link from 'next/link'
+import {
+  IoMdReturnRight,
+  IoIosArrowForward,
+  IoIosArrowRoundForward,
+} from 'react-icons/io'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
 import { HeroText } from 'components/HeroText'
@@ -27,27 +32,24 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route='' />
+      <Header route="" />
       <div className="mx-6 mt-20 sm:mt-16 sm:mx-8">
         <HeroText
-          text={<>Create your <br className="hidden sm:block"></br>own</>}
+          text={
+            <>
+              Create your <br className="hidden sm:block"></br>own
+            </>
+          }
           highlight=" platform"
         />
-        <div className="flex w-full justify-end pt-32 pr-16">
-          <div className="flex items-center">
-            <div className="mr-2 mt-2">
-              <IoMdReturnRight size={32} />
-            </div>
-            <button
-              className="pa-paragraph text-xl sm:text-2xl"
-              onClick={handleClick}
-              onKeyDown={handleKeyDown}>
-              press{' '}
-              <strong className="text-[#0c1413] hover:text-[#ecf1f0]">`Enter`</strong> to
-              continue
+        <Link href={'./inputTitle'}>
+          <a>
+            <button className="flex items-center justify-between gap-4 w-full mt-8 text-2xl pa-paragraph pa-input h-20 px-6 hover:bg-slate-50 sm:w-1/6 sm:justify-center">
+              <p className="mb-1">Get Started</p>
+              <IoIosArrowRoundForward size={32} />
             </button>
-          </div>
-        </div>
+          </a>
+        </Link>
       </div>
     </div>
   )
