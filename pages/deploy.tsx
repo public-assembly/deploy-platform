@@ -2,10 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useFormStateProvider } from 'context'
 import { useAccount } from 'wagmi'
-import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
+import { useCurationFactory } from '@public-assembly/curation-interactions'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
+
+type initialListings = any[]
 
 // Goerli curator factory address
 const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
@@ -22,17 +24,35 @@ const Deploy: NextPage = () => {
   const curatorTitle = title as string
   const curatorSymbol = symbol as string
   const tokenPassAddress = curationPass as string
-  const initialListings = [
-    Object.values({
-      curatedAddress: media,
-      selectedTokenId: 0,
-      curator: address,
-      curationTargetType: 1,
-      sortOrder: 0,
-      hasTokenId: false,
-      chainId: 4,
-    }),
-  ]
+  const initialListings = [] as initialListings
+
+  if ((media as string) == '') {
+    initialListings.push('')
+  } else {
+    initialListings.push([
+      Object.values({
+        curatedAddress: media,
+        selectedTokenId: 0,
+        curator: address,
+        curationTargetType: 1,
+        sortOrder: 0,
+        hasTokenId: false,
+        chainId: 4,
+      }),
+    ])
+  }
+
+  // const initialListings = [
+  //   Object.values({
+  //     curatedAddress: media,
+  //     selectedTokenId: 0,
+  //     curator: address,
+  //     curationTargetType: 1,
+  //     sortOrder: 0,
+  //     hasTokenId: false,
+  //     chainId: 4,
+  //   }),
+  // ]
 
   const {
     deployConfig,
@@ -40,7 +60,7 @@ const Deploy: NextPage = () => {
     deployWrite,
     deployWriteError,
     txnDeployStatus,
-  } = useCuratorFactory({
+  } = useCurationFactory({
     curatorFactoryAddress,
     curationManagerAddress,
     curatorTitle,
