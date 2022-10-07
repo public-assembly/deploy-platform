@@ -7,6 +7,8 @@ import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 
+// type initialListings = any[]
+
 // Goerli curator factory address
 const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
 const initialPause = false
@@ -33,6 +35,23 @@ const Deploy: NextPage = () => {
       chainId: 4,
     }),
   ]
+  // const initialListings = [] as initialListings
+
+  // if ((media as string) == '') {
+  //   initialListings.push('')
+  // } else {
+  //   initialListings.push([
+  //     Object.values({
+  //       curatedAddress: media,
+  //       selectedTokenId: 0,
+  //       curator: address,
+  //       curationTargetType: 1,
+  //       sortOrder: 0,
+  //       hasTokenId: false,
+  //       chainId: 4,
+  //     }),
+  //   ])
+  // }
 
   const {
     deployConfig,
