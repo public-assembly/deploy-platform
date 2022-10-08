@@ -6,6 +6,7 @@ import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
+import { VercelDeploy } from '../components/VercelDeploy'
 
 type initialListings = any[]
 
@@ -82,12 +83,13 @@ const Deploy: NextPage = () => {
             <div className="mr-1 mt-1">
               <IoIosArrowRoundForward size={48} />
             </div>
-            <button
+            {/* <button
               className="pa-paragraph text-xl sm:text-2xl"
               onClick={() => deployWrite?.()}>
               <strong className="text-[#0c1413] hover:text-[#ecf1f0]">Deploy</strong> your
               contract
-            </button>
+            </button> */}
+            <VercelDeploy />
           </div>
         </div>
       </div>
