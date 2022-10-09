@@ -31,9 +31,8 @@ const InputSymbol: NextPage = () => {
         <HeroText
           text={
             <>
-              choose your&nbsp;<span className="hidden sm:block"></span>contract{' '}
+              next,&nbsp;<span className="hidden sm:block"></span>choose a&nbsp;
               <span className="pa-displayLight">symbol</span>
-              {/* choose a&nbsp; */}
             </>
           }
         />
