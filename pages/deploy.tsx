@@ -6,6 +6,7 @@ import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
+import { VercelDeploy } from '../components/VercelDeploy'
 
 type initialListings = any[]
 
