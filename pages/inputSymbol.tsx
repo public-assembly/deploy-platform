@@ -5,7 +5,6 @@ import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
-import { ContinueButton } from 'components/ContinueButton'
 
 const InputSymbol: NextPage = () => {
   const router = useRouter()
@@ -28,31 +27,22 @@ const InputSymbol: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputTitle'} />
-      <div className="flex flex-col gap-2 mx-6 mt-12 sm:mt-16 sm:mx-8 sm:gap-8">
+      <div className="flex flex-col flex-wrap gap-6 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>
-              Choose your <br className="hidden sm:block"></br>
+              next,&nbsp;<span className="hidden sm:block"></span>choose a&nbsp;
+              <span className="pa-displayLight">symbol</span>
             </>
           }
-          highlight=" symbol"
         />
-        <div>
-          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
-            Your contract symbol will be used to distinguish your contract from those of
-            other creators. Try using the first few characters of your contract title or
-            maybe removing all the vowels.
-          </p>
-          <div className="flex items-center">
-            <Input
-              value={symbol}
-              placeholder="e.g. $NEO"
-              onChange={(e: any) => setSymbol(e.currentTarget.value)}
-              onKeyPress={handleKeyPress}
-            />
-            <ContinueButton route={'./inputCurationPass'} />
-          </div>
-        </div>
+        <Input
+          value={symbol}
+          placeholder="e.g. NEO"
+          onChange={(e: any) => setSymbol(e.currentTarget.value)}
+          onKeyPress={handleKeyPress}
+          route={'./inputCurationPass'}
+        />
       </div>
     </div>
   )
