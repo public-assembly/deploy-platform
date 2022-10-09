@@ -37,21 +37,14 @@ const InputSymbol: NextPage = () => {
           }
           highlight=" symbol"
         />
-        <div>
-          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
-            Your contract symbol will be used to distinguish your contract from those of
-            other creators. Try using the first few characters of your contract title or
-            maybe removing all the vowels.
-          </p>
-          <div className="flex items-center">
-            <Input
-              value={symbol}
-              placeholder="e.g. $NEO"
-              onChange={(e: any) => setSymbol(e.currentTarget.value)}
-              onKeyPress={handleKeyPress}
-            />
-            <ContinueButton route={'./inputCurationPass'} />
-          </div>
+        <div className="flex items-center">
+          <Input
+            value={symbol}
+            placeholder="e.g. $NEO"
+            onChange={(e: any) => setSymbol(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+          <ContinueButton route={'./inputCurationPass'} />
         </div>
       </div>
     </div>

@@ -53,35 +53,31 @@ const InputCurationPass: NextPage = () => {
           }
           highlight=" pass"
         />
-        <div>
-          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
-            This is the contract address of the editions NFT that will be used to gate
-            access to curation functionality. If you haven&apos;t already created one of
-            these,{' '}
-            <a
-              className="underline text-[#006ff1] hover:text-[#0c1413]"
-              href="https://create.zora.co/create/edition"
-              target="_blank"
-              rel="noreferrer">
-              make one here
-            </a>
-          </p>
-          <div className="flex items-center">
-            <Input
-              value={curationPass}
-              placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-              onChange={handleChange}
-              onKeyPress={handleKeyPress}
-            />
-            <ContinueButton route={'./inputMedia'} />
-          </div>
-          {/* {!validAddress && (
+        <div className="flex items-center">
+          <Input
+            value={curationPass}
+            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+            onChange={handleChange}
+            onKeyPress={handleKeyPress}
+          />
+          <ContinueButton route={'./inputMedia'} />
+        </div>
+        {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />
         )} */}
-        </div>
       </div>
     </div>
   )
 }
 
 export default InputCurationPass
+
+{
+  /* <a
+  className="underline text-[#006ff1] hover:text-[#0c1413]"
+  href="https://create.zora.co/create/edition"
+  target="_blank"
+  rel="noreferrer">
+  make one here
+</a> */
+}

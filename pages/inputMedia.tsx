@@ -53,26 +53,15 @@ const InputMedia: NextPage = () => {
           }
           highlight=" songs"
         />
-        <div>
-          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
-            If you&apos;ve already decided on what you want to curate, you can add the
-            addresses of those NFTs below. If you&apos;re not quite sure what you want to
-            include,{' '}
-            <button
-              onClick={() => router.push('/deploy')}
-              className="underline text-[#006ff1] hover:text-[#0c1413]">
-              skip ahead!
-            </button>
-          </p>
-          <div className="flex items-center">
-            <Input
-              value={media}
-              placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-              onChange={handleChange}
-              onKeyPress={handleKeyPress}
-            />
-            <ContinueButton route={'./deploy'} />
-          </div>
+
+        <div className="flex items-center">
+          <Input
+            value={media}
+            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+            onChange={handleChange}
+            onKeyPress={handleKeyPress}
+          />
+          <ContinueButton route={'./deploy'} />
         </div>
       </div>
     </div>
@@ -80,3 +69,9 @@ const InputMedia: NextPage = () => {
 }
 
 export default InputMedia
+
+/* <button
+onClick={() => router.push('/deploy')}
+className="underline text-[#006ff1] hover:text-[#0c1413]">
+skip ahead!
+</button> */

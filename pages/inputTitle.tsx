@@ -38,21 +38,14 @@ const InputTitle: NextPage = () => {
           }
           highlight=" title"
         />
-        <div>
-          <p className="pa-paragraph text-xl mt-4 mb-8 sm:text-3xl max-w-7xl">
-            This is how your contract will be referenced. Your free to provide a more
-            general name like &quot;Neosound&quot;, or one more specific like &quot;Down
-            Bad Pt. 2.&quot;
-          </p>
-          <div className="flex items-center">
-            <Input
-              value={title}
-              placeholder={'e.g. Neosound'}
-              onChange={(e: any) => setTitle(e.currentTarget.value)}
-              onKeyPress={handleKeyPress}
-            />
-            <ContinueButton route={'./inputSymbol'} />
-          </div>
+        <div className="flex items-center">
+          <Input
+            value={title}
+            placeholder={'e.g. Neosound'}
+            onChange={(e: any) => setTitle(e.currentTarget.value)}
+            onKeyPress={handleKeyPress}
+          />
+          <ContinueButton route={'./inputSymbol'} />
         </div>
       </div>
     </div>
