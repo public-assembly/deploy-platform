@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         */}
       </Head>
       <Header route="" />
-      <div className="mx-6 mt-20 sm:mt-16 sm:mx-8">
+      <div className="mt-20 sm:mt-16">
         <HeroText
           text={
             <>

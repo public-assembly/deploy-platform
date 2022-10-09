@@ -1,4 +1,3 @@
-
 type InputProps = {
   placeholder?: string
   value?: string
@@ -9,7 +8,7 @@ type InputProps = {
 export const Input = ({ placeholder, value, onChange, onKeyPress }: InputProps) => {
   return (
     <input
-      className="pa-input pa-paragraph pl-6 w-full h-20 text-xl sm:w-3/5 sm:text-2xl"
+      className="pa-input pa-paragraph pl-6 w-full h-20 sm:w-3/5"
       type="text"
       placeholder={placeholder}
       value={value}

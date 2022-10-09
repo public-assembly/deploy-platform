@@ -14,47 +14,23 @@
 
 /* TYPOGRAPHY */
 .pa-displayDark {
-  /* font-size: 12.5rem;
-  line-height: 11.5rem; */
-  font-weight: 600;
-  color: var(--pa__text-dark);
+  @apply text-6xl md:text-9xl lg:text-12xl font-semibold text-[#0c1413];
 }
 
 .pa-displayLight {
-  /* font-size: 12.5rem;
-  line-height: 11.5rem; */
-  font-weight: 600;
-  color: var(--pa__text-light);
-}
-
-.pa-header {
-  font-size: 3.5rem;
-  line-height: 4.5rem;
-  font-weight: 600;
-  letter-spacing: 0.13rem;
+  @apply text-6xl md:text-9xl lg:text-12xl font-semibold text-[#ecf1f0];
 }
 
 .pa-paragraph {
-  /* font-size: 1.75rem;
-  line-height: 2.5rem; */
-  font-weight: 400;
-  letter-spacing: 0.06rem;
-  /* color: var(--pa__text-dark); */
+  @apply text-xl sm:text-2xl font-normal text-[#0c1413] tracking-wider;
 }
 
 .pa-paragraphLink {
-  /* font-size: 1.75rem;
-  line-height: 2.5rem; */
-  font-weight: 400;
-  letter-spacing: 0.06rem;
-  color: var(--pa__text-blue);
-  text-decoration: underline;
+  @apply text-xl sm:text-2xl font-normal text-[#006ff1] tracking-wider underline;
 }
 
 /* COMPONENTS */
 .pa-input {
-  /* width: 65%; */
-  /* height: 88px; */
   background: white;
   border-color: var(--pa__text-dark);
   border-style: solid;
