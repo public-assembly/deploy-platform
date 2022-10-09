@@ -33,19 +33,19 @@ const Home: NextPage = () => {
         */}
       </Head>
       <Header route="" />
-      <div className="mt-20 sm:mt-16">
+      <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>
-              Create your <br className="hidden sm:block"></br>own
+              create your own&nbsp;
             </>
           }
-          highlight=" platform"
+          highlight="platform"
         />
         <Link href={'./inputTitle'}>
           <a>
-            <button className="flex items-center justify-between gap-4 w-full mt-8 text-2xl pa-paragraph pa-input h-20 px-6 hover:bg-slate-50 sm:w-1/6 sm:justify-center">
-              <p className="mb-1">Get Started</p>
+            <button className="flex items-center gap-1 pa-paragraph hover:text-white">
+              <span className="mb-1">get started</span>
               <IoIosArrowRoundForward size={32} />
             </button>
           </a>

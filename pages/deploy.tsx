@@ -75,7 +75,7 @@ const Deploy: NextPage = () => {
       </Head>
       <Header route="./inputMedia" />
       <div className="mt-20 sm:mt-16">
-        <HeroText text={<>Ready to curate&nbsp;</>} highlight={`${title}?`} />
+        <HeroText text={<>ready to curate&nbsp;</>} highlight={`${title}?`} />
         <div></div>
         <div className="flex w-full justify-end pt-24">
           <div className="flex items-center gap-1">
