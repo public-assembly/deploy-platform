@@ -74,25 +74,22 @@ const Deploy: NextPage = () => {
         */}
       </Head>
       <Header route="./inputMedia" />
-      <div className="mt-20 sm:mt-16">
+      <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>
-              ready to curate&nbsp;<span className='pa-displayLight'>{`${title}?`}</span>
+              ready to&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>create&nbsp;
+              <span className="pa-displayLight">{`${title}?`}</span>
             </>
           }
         />
-        <div></div>
-        <div className="flex w-full justify-end pt-24">
-          <div className="flex items-center gap-1">
-            <button className="pa-paragraph" onClick={() => deployWrite?.()}>
-              deploy your contract
-            </button>
-            <div className="mt-1">
-              <IoIosArrowRoundForward size={32} />
-            </div>
-          </div>
-        </div>
+        <button
+          className="flex items-center gap-1 pa-paragraph hover:text-[#ecf1f0]"
+          onClick={() => deployWrite?.()}>
+          <span className='mb-1'>deploy your contract</span>
+          <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+        </button>
       </div>
     </div>
   )

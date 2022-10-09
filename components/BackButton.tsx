@@ -10,11 +10,9 @@ export const BackButton = ({ route }: BackButtonProps) => {
     <Link href={route}>
       <a>
         <button>
-          <div className="flex items-center gap-1 pa-paragraph hover:text-white">
-            <IoIosArrowRoundBack size={32} />
-            <span className="hidden mb-2 sm:block">
-              go back
-            </span>
+          <div className="flex items-center gap-1 pa-paragraph transition ease-in-out hover:text-[#ecf1f0]">
+            <IoIosArrowRoundBack className='text-3xl sm:text-4.5' />
+            <span className="hidden mb-2 sm:block">go back</span>
           </div>
         </button>
       </a>

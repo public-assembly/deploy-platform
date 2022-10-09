@@ -48,14 +48,13 @@ const InputCurationPass: NextPage = () => {
         <HeroText
           text={
             <>
-              {/* designate a&nbsp;<span className="sm: hidden"></span>curation&nbsp; */}
               designate a&nbsp;<wbr></wbr><span className="hidden sm:block"></span>curation&nbsp;<span className="pa-displayLight">pass</span>
             </>
           }
         />
         <Input
           value={curationPass}
-          placeholder="e.g. 0x34fe32e6442d14d923953a537b816336..."
+          placeholder="e.g. 0x34fe32e6442d14d9..."
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           route={'./inputMedia'}

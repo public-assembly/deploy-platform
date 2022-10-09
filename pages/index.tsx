@@ -37,13 +37,14 @@ const Home: NextPage = () => {
         <HeroText
           text={
             <>
-              create your own platform
+              create your&nbsp;<wbr></wbr><span className="hidden sm:block"></span>own&nbsp;
+              <span className="pa-displayLight">platform</span>
             </>
           }
         />
         <Link href={'./inputTitle'}>
           <a>
-            <button className="flex items-center gap-1 pa-paragraph hover:text-white">
+            <button className="flex items-center gap-1 pa-paragraph hover:text-[#ecf1f0]">
               <span className="mb-1">get started</span>
               <IoIosArrowRoundForward size={32} />
             </button>

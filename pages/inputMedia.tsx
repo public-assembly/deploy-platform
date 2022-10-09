@@ -48,14 +48,14 @@ const InputMedia: NextPage = () => {
         <HeroText
           text={
             <>
-              input your first&nbsp;
+              input your&nbsp;<wbr></wbr><span className='hidden sm:block'></span>first&nbsp;
               <span className="pa-displayLight">song</span>
             </>
           }
         />
         <Input
           value={media}
-          placeholder="e.g. 0x24535b3be22f1dbcf9f7cc4eebacee9f..."
+          placeholder="e.g. 0x24535b3be22f1dbc..."
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           route={'./deploy'}
