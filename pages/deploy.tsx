@@ -31,7 +31,7 @@ const Deploy: NextPage = () => {
         curatedAddress: media,
         selectedTokenId: 0,
         curator: address,
-        curationTargetType: 1,
+        curationTargetType: 6,
         sortOrder: 0,
         hasTokenId: false,
         chainId: 4,
