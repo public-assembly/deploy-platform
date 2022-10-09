@@ -5,7 +5,9 @@ export function PageWrapper({ children, ...props }: { children?: JSX.Element }) 
   return (
     <>
       {/* <Header /> */}
-      <main {...props}>{children}</main>
+      <main className={`pa-pageLayout`} {...props}>
+        {children}
+      </main>
       {/* <Footer /> */}
     </>
   )

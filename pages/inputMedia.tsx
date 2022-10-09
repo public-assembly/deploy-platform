@@ -44,7 +44,7 @@ const InputMedia: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputCurationPass'} />
-      <div className="flex flex-col gap-2 mx-6 mt-12 sm:mt-16 sm:mx-8 sm:gap-8">
+      <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>

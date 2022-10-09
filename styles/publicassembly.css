@@ -7,6 +7,11 @@
   --pa__text-light: #ecf1f0;
 }
 
+/* LAYOUT */
+.pa-pageLayout {
+  /* @apply max-w-screen-lg */
+}
+
 /* TYPOGRAPHY */
 .pa-displayDark {
   /* font-size: 12.5rem;
