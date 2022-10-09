@@ -27,7 +27,7 @@ const InputSymbol: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputTitle'} />
-      <div className="flex flex-col flex-wrap gap-2 mt-12 sm:mt-16 sm:gap-8">
+      <div className="flex flex-col flex-wrap gap-6 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>

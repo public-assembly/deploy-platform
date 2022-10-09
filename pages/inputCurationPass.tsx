@@ -44,7 +44,7 @@ const InputCurationPass: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputSymbol'} />
-      <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
+      <div className="flex flex-col gap-6 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>
@@ -55,7 +55,7 @@ const InputCurationPass: NextPage = () => {
         />
         <Input
           value={curationPass}
-          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+          placeholder="e.g. 0x34fe32e6442d14d923953a537b816336..."
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           route={'./inputMedia'}
