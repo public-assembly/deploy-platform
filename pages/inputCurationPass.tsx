@@ -49,7 +49,7 @@ const InputCurationPass: NextPage = () => {
           text={
             <>
               {/* designate a&nbsp;<span className="sm: hidden"></span>curation&nbsp; */}
-              designate a&nbsp;<span className="hidden sm:block"></span>curation&nbsp;<span className="pa-displayLight">pass</span>
+              designate a&nbsp;<wbr></wbr><span className="hidden sm:block"></span>curation&nbsp;<span className="pa-displayLight">pass</span>
             </>
           }
         />
