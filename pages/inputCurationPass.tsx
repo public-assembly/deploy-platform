@@ -48,10 +48,10 @@ const InputCurationPass: NextPage = () => {
         <HeroText
           text={
             <>
-              Designate a <br className="hidden sm:block"></br>curation
+              designate a&nbsp;<br className="hidden sm:block"></br>curation&nbsp;
             </>
           }
-          highlight=" pass"
+          highlight="pass"
         />
         <div className="flex items-center">
           <Input

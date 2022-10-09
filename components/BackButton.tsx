@@ -1,4 +1,4 @@
-import { IoIosArrowBack } from 'react-icons/io'
+import { IoIosArrowRoundBack } from 'react-icons/io'
 import Link from 'next/link'
 
 type BackButtonProps = {
@@ -10,10 +10,10 @@ export const BackButton = ({ route }: BackButtonProps) => {
     <Link href={route}>
       <a>
         <button>
-          <div className="flex items-center hover:text-white">
-            <IoIosArrowBack size={32} />
-            <span className="hidden pa-paragraph mx-2 text-xl sm:text-2xl sm:inline sm:mb-0">
-              Go Back
+          <div className="flex items-center gap-1 hover:text-white">
+            <IoIosArrowRoundBack size={32} />
+            <span className="hidden pa-paragraph mb-2 sm:block hover:text-inherit">
+              go back
             </span>
           </div>
         </button>

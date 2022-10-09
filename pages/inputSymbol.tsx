@@ -32,10 +32,10 @@ const InputSymbol: NextPage = () => {
         <HeroText
           text={
             <>
-              Choose your <br className="hidden sm:block"></br>
+              choose your&nbsp;<br className="hidden sm:block"></br>contract&nbsp;
             </>
           }
-          highlight=" symbol"
+          highlight="symbol"
         />
         <div className="flex items-center">
           <Input

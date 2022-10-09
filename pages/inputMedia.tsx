@@ -48,10 +48,10 @@ const InputMedia: NextPage = () => {
         <HeroText
           text={
             <>
-              Add your <br className="hidden sm:block"></br>first
+              add your&nbsp;<br className="hidden sm:block"></br>first&nbsp;
             </>
           }
-          highlight=" songs"
+          highlight="song"
         />
 
         <div className="flex items-center">

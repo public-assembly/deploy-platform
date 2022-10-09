@@ -33,10 +33,10 @@ const InputTitle: NextPage = () => {
         <HeroText
           text={
             <>
-              Each contract<br className="hidden sm:block"></br> needs a
+              to begin,&nbsp;<br className="hidden sm:block"></br>title your&nbsp;
             </>
           }
-          highlight=" title"
+          highlight="contract"
         />
         <div className="flex items-center">
           <Input
