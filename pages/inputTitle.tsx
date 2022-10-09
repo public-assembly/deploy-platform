@@ -33,12 +33,11 @@ const InputTitle: NextPage = () => {
         <HeroText
           text={
             <>
-              to begin,&nbsp;<br className="hidden sm:block"></br>title your&nbsp;
+              to begin,&nbsp;<span className="hidden sm:block"></span>title your&nbsp;
+              <span className="pa-displayLight">contract</span>
             </>
           }
-          highlight="contract"
         />
-
         <Input
           value={title}
           placeholder={'e.g. Neosound'}

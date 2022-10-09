@@ -37,10 +37,9 @@ const Home: NextPage = () => {
         <HeroText
           text={
             <>
-              create your own&nbsp;
+              create your own platform
             </>
           }
-          highlight="platform"
         />
         <Link href={'./inputTitle'}>
           <a>

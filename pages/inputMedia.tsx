@@ -48,21 +48,18 @@ const InputMedia: NextPage = () => {
         <HeroText
           text={
             <>
-              add your&nbsp;<br className="hidden sm:block"></br>first&nbsp;
+              input your first&nbsp;
+              <span className="pa-displayLight">song</span>
             </>
           }
-          highlight="song"
         />
-
-        <div className="flex items-center">
-          <Input
-            value={media}
-            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-            route={'./deploy'}
-          />
-        </div>
+        <Input
+          value={media}
+          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+          onChange={handleChange}
+          onKeyPress={handleKeyPress}
+          route={'./deploy'}
+        />
       </div>
     </div>
   )

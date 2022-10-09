@@ -48,20 +48,18 @@ const InputCurationPass: NextPage = () => {
         <HeroText
           text={
             <>
-              designate a&nbsp;<br className="hidden sm:block"></br>curation&nbsp;
+              {/* designate a&nbsp;<span className="sm: hidden"></span>curation&nbsp; */}
+              designate a&nbsp;<span className="hidden sm:block"></span>curation&nbsp;<span className="pa-displayLight">pass</span>
             </>
           }
-          highlight="pass"
         />
-        <div className="flex items-center">
-          <Input
-            value={curationPass}
-            placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-            route={'./inputMedia'}
-          />
-        </div>
+        <Input
+          value={curationPass}
+          placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
+          onChange={handleChange}
+          onKeyPress={handleKeyPress}
+          route={'./inputMedia'}
+        />
         {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />
         )} */}
