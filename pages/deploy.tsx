@@ -78,8 +78,8 @@ const Deploy: NextPage = () => {
         <HeroText
           text={
             <>
-              ready to&nbsp;<wbr></wbr>
-              <span className="hidden sm:block"></span>create&nbsp;
+              ready to create&nbsp;<span className="hidden sm:block"></span>
+              <wbr></wbr>
               <span className="pa-displayLight">{`${title}?`}</span>
             </>
           }
@@ -87,7 +87,7 @@ const Deploy: NextPage = () => {
         <button
           className="flex items-center gap-1 pa-paragraph hover:text-[#ecf1f0]"
           onClick={() => deployWrite?.()}>
-          <span className='mb-1'>deploy your contract</span>
+          <span className="mb-1">deploy your contract</span>
           <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
         </button>
       </div>
