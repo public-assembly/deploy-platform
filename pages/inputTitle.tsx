@@ -29,7 +29,7 @@ const InputTitle: NextPage = () => {
         */}
       </Head>
       <Header route="" />
-      <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
+      <div className="flex flex-col gap-6 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>
@@ -38,15 +38,14 @@ const InputTitle: NextPage = () => {
           }
           highlight="contract"
         />
-        <div className="flex items-center">
-          <Input
-            value={title}
-            placeholder={'e.g. Neosound'}
-            onChange={(e: any) => setTitle(e.currentTarget.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <ContinueButton route={'./inputSymbol'} />
-        </div>
+
+        <Input
+          value={title}
+          placeholder={'e.g. Neosound'}
+          onChange={(e: any) => setTitle(e.currentTarget.value)}
+          onKeyPress={handleKeyPress}
+          route={'./inputSymbol'}
+        />
       </div>
     </div>
   )

@@ -34,15 +34,14 @@
 /* COMPONENTS */
 .pa-input {
   background: white;
-  border-color: var(--pa__text-dark);
-  border-style: solid;
-  border-width: 0px 0px 4px 0px;
+  border: 4px solid var(--pa__text-dark);
   -webkit-appearance: none;
   border-radius: 0;
+  caret-color: var(--pa__pink);
 }
 
 input[type='text']:focus {
-  outline: 2px solid var(--pa__pink);
+  outline: 0px
 }
 
 /* EXPERIMENTAL */

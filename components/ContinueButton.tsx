@@ -1,4 +1,4 @@
-import { IoIosArrowForward } from 'react-icons/io'
+import { IoIosArrowRoundForward } from 'react-icons/io'
 import Link from 'next/link'
 
 type ContinueButtonProps = {
@@ -9,8 +9,10 @@ export const ContinueButton = ({ route }: ContinueButtonProps) => {
   return (
     <Link href={route}>
       <a>
-        <button className="pa-input h-20 px-6 hover:bg-slate-50">
-          <IoIosArrowForward size={24} />
+        <button className="flex items-center justify-center bg-[#0c1413] w-14 h-14 sm:w-20 sm:h-20 text-[#ecf1f0]">
+          <span className="transition ease-in-out hover:translate-x-1">
+            <IoIosArrowRoundForward size={40} />
+          </span>
         </button>
       </a>
     </Link>

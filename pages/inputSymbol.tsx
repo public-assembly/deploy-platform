@@ -32,7 +32,7 @@ const InputSymbol: NextPage = () => {
         <HeroText
           text={
             <>
-              choose your&nbsp;<br className="hidden sm:block"></br>contract&nbsp;
+              choose&nbsp;<br className="hidden sm:block"></br>your contract&nbsp;
             </>
           }
           highlight="symbol"
@@ -40,11 +40,11 @@ const InputSymbol: NextPage = () => {
         <div className="flex items-center">
           <Input
             value={symbol}
-            placeholder="e.g. $NEO"
+            placeholder="e.g. NEO"
             onChange={(e: any) => setSymbol(e.currentTarget.value)}
             onKeyPress={handleKeyPress}
+            route={'./inputCurationPass'}
           />
-          <ContinueButton route={'./inputCurationPass'} />
         </div>
       </div>
     </div>

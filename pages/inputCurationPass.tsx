@@ -59,8 +59,8 @@ const InputCurationPass: NextPage = () => {
             placeholder="e.g. 0x34fe32e6442d14d923953a537b8163365630b5a7"
             onChange={handleChange}
             onKeyPress={handleKeyPress}
+            route={'./inputMedia'}
           />
-          <ContinueButton route={'./inputMedia'} />
         </div>
         {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />
