@@ -5,7 +5,14 @@ export function ConnectButton({ connectText, ...props }: { connectText: string }
   return (
     <div className="connect-button-wrapper relative overflow-hidden " {...props}>
       <RKConnectButton.Custom>
-        {({ account, chain, openAccountModal, openConnectModal, mounted }) => {
+        {({
+          account,
+          chain,
+          openAccountModal,
+          openConnectModal,
+          openChainModal,
+          mounted,
+        }) => {
           return (
             <>
               {(() => {
@@ -19,11 +26,10 @@ export function ConnectButton({ connectText, ...props }: { connectText: string }
                   )
                 }
                 if (chain.unsupported) {
-                  return (
-                    <div className="text-red-400 pa-paragraph ">
-                      &#x26A0; wrong network
-                    </div>
-                  )
+                  <button onClick={openChainModal}>
+                    return{' '}
+                    <div className=" text-red-400 pa-paragraph ">wrong network</div>
+                  </button>
                 }
                 return (
                   <button onClick={openAccountModal}>
