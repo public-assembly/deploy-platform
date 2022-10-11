@@ -7,7 +7,7 @@ import { Header } from 'components/Header'
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { HeroText } from 'components/HeroText'
-import { ContinueButton } from 'components/ContinueButton'
+import { HeroWrapper } from 'components/HeroWrapper'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
@@ -44,7 +44,7 @@ const InputMedia: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputCurationPass'} />
-      <div className="flex flex-col gap-6 mt-40 sm:mt-32 sm:gap-8">
+      <HeroWrapper>
         <HeroText
           text={
             <>
@@ -60,7 +60,7 @@ const InputMedia: NextPage = () => {
           onKeyPress={handleKeyPress}
           route={'./deploy'}
         />
-      </div>
+      </HeroWrapper>
     </div>
   )
 }
