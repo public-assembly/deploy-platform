@@ -34,7 +34,7 @@ export const VercelDeploy = () => {
     <a id="source_url" target="_blank" rel="noreferrer">
       <button>
         <div className="flex items-center gap-1 ml-2 pa-paragraph transition ease-in-out sm:hover:text-[#ecf1f0]">
-          <span className="hidden mb-2 sm:block">deploy to vercel</span>
+          <span className="mb-2">deploy to vercel</span>
           <IoIosArrowRoundForward className="mb-1 text-3xl sm:text-4.5" />
         </div>
       </button>

@@ -96,7 +96,7 @@ const Deploy: NextPage = () => {
             }
           />
         ) : (
-          <div className="flex gap-6 sm:gap-8">
+          <div className="flex flex-col gap-6 sm:gap-8">
             <HeroText
               text={
                 <>
