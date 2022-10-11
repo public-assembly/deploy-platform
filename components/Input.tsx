@@ -5,6 +5,7 @@ type InputProps = {
   value?: string
   onChange?: any /* Specify Typings */
   onKeyPress?: any /* Specify Typings */
+  onKeyDown?: any
   route: string /* How would you specify this is a prop from ContinueButton? */
 }
 
@@ -13,6 +14,7 @@ export const Input = ({
   value,
   onChange,
   onKeyPress,
+  onKeyDown,
   route,
 }: InputProps) => {
   return (
@@ -24,6 +26,7 @@ export const Input = ({
         value={value}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        onKeyDown={onKeyDown}
       />
       <ContinueButton route={route} />
     </div>

@@ -11,7 +11,7 @@ export type FormStateReturnTypes = {
   setSymbol?: any /* Specify Typings */
   curationPass?: string
   setCurationPass?: any /* Specify Typings */
-  media?: any /* Specify Typings */
+  media?: string[] /* Specify Typings */
   setMedia?: any /* Specify Typings */
 }
 
@@ -37,7 +37,7 @@ export function FormStateProvider({ children }: FormStateProps) {
   const [title, setTitle] = useState('')
   const [symbol, setSymbol] = useState('')
   const [curationPass, setCurationPass] = useState('')
-  const [media, setMedia] = useState('')
+  const [media, setMedia] = useState([])
 
   return (
     // The provider gives access to the context to its children
