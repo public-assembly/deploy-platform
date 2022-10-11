@@ -43,7 +43,7 @@ const InputCurationPass: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route={'./inputSymbol'} routeName="symbol" />
+      <Header route={'./inputSymbol'} routeName="edit symbol" />
       <HeroWrapper>
         <HeroText
           text={

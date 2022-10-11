@@ -29,7 +29,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="" routeName=''/>
+      <Header route="https://www.neosound.xyz/" routeName='neosound'/>
       <HeroWrapper>
         <HeroText
           text={

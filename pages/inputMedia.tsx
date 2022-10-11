@@ -43,7 +43,7 @@ const InputMedia: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route={'./inputCurationPass'} routeName="curation pass" />
+      <Header route={'./inputCurationPass'} routeName="edit curation pass" />
       <HeroWrapper>
         <HeroText
           text={

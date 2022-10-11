@@ -13,7 +13,7 @@ import { VercelDeploy } from 'components/VercelDeploy'
 
 type initialListings = any[]
 
-const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
+const curatorFactoryAddress = '0xFF8B0f870ff56870Dc5aBd6cB3E6E89c8ba2e062'
 const initialPause = false
 const curationLimit = 0
 const metadataRenderer = '0x0000000000000000000000000000000000000000'
@@ -81,7 +81,7 @@ const Deploy: NextPage = () => {
       {txnDeployStatus == 'success' ? (
         <Header route="" routeName="" />
       ) : (
-        <Header route={'./inputMedia'} routeName="media" />
+        <Header route={'./inputMedia'} routeName="edit media" />
       )}
 
       <HeroWrapper>

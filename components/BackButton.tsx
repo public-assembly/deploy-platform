@@ -13,7 +13,7 @@ export const BackButton = ({ route, routeName }: BackButtonProps) => {
         <button>
           <div className="flex items-center gap-1 pa-paragraph transition ease-in-out sm:hover:text-[#ecf1f0]">
             <IoIosArrowRoundBack className='text-3xl sm:text-4.5' />
-            <span className="hidden mb-2 sm:block">edit&nbsp;{routeName}</span>
+            <span className="hidden mb-2 sm:block">{routeName}</span>
           </div>
         </button>
       </a>

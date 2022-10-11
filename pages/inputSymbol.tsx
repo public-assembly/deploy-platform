@@ -27,7 +27,7 @@ const InputSymbol: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route={'./inputTitle'} routeName='title'/>
+      <Header route={'./inputTitle'} routeName='edit title'/>
       <HeroWrapper>
         <HeroText
           text={
