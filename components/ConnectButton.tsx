@@ -25,7 +25,7 @@ export function ConnectButton({ connectText, ...props }: { connectText: string }
                     </button>
                   )
                 }
-                if (chain.unsupported) {
+                if (chain.id !== 1) {
                   <button onClick={openChainModal}>
                     return{' '}
                     <div className=" text-red-400 pa-paragraph ">wrong network</div>
