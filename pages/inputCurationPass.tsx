@@ -58,6 +58,7 @@ const InputCurationPass: NextPage = () => {
           onChange={handleChange}
           onKeyPress={handleKeyPress}
           route={'./inputMedia'}
+          disabled={validAddress}
         />
         {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />

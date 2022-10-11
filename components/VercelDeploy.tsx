@@ -7,7 +7,7 @@ export const VercelDeploy = () => {
 
   useEffect(() => {
     const envKeys =
-      '&env=NEXT_PUBLIC_SITE_TITLE, NEXT_PUBLIC_APP_ID, NEXT_PUBLIC_CURATION_CONTRACT'
+      '&env=NEXT_PUBLIC_SITE_TITLE, NEXT_PUBLIC_APP_ID, NEXT_PUBLIC_SITE_DESCRIPTION, NEXT_PUBLIC_TWITTER_HANDLE, NEXT_PUBLIC_WEBSITE_URL, NEXT_PUBLIC_CHAIN_ID, NEXT_PUBLIC_CURATION_CONTRACT'
     // const envDescription = undefined
     // const envLink = undefined
     const projectName = '&project-name=' + title
