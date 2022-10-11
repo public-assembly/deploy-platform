@@ -2,9 +2,7 @@ import { ConnectButton as RKConnectButton } from '@rainbow-me/rainbowkit'
 
 export function ConnectButton({ ...props }) {
   return (
-    <div
-      className="connect-button-wrapper relative flex items-center pr-3 pl-3 py-1.5 rounded-2xl bg-slate-100 overflow-hidden"
-      {...props}>
+    <div className="connect-button-wrapper relative overflow-hidden" {...props}>
       <RKConnectButton.Custom>
         {({ account, chain, openAccountModal, openConnectModal, mounted }) => {
           return (
@@ -12,19 +10,21 @@ export function ConnectButton({ ...props }) {
               {(() => {
                 if (!mounted || !account || !chain) {
                   return (
-                    <button onClick={openConnectModal} className="text-sm">
-                      Connect Wallet
+                    <button onClick={openConnectModal} className="pa-paragraph ">
+                      connect wallet
                     </button>
                   )
                 }
                 if (chain.unsupported) {
                   return (
-                    <div className="text-red-400 text-sm">&#x26A0; Wrong Network</div>
+                    <div className="text-red-400 pa-paragraph ">
+                      &#x26A0; wrong network
+                    </div>
                   )
                 }
                 return (
                   <button onClick={openAccountModal}>
-                    <div className="flex items-center gap-2 text-sm">
+                    <div className="flex items-center gap-2 pa-paragraph ">
                       {account.displayName}
                     </div>
                   </button>

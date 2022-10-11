@@ -8,6 +8,7 @@ import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
 import { VercelDeploy } from '../components/VercelDeploy'
+import { ConnectButton } from 'components/ConnectButton'
 
 type initialListings = any[]
 
@@ -19,7 +20,7 @@ const metadataRendererInit = '0x'
 
 const Deploy: NextPage = () => {
   const { title, symbol, curationPass, media } = useFormStateProvider()
-  const { address } = useAccount()
+  const { address, isConnected } = useAccount()
 
   const curationManagerAddress = address as string
   const curatorTitle = title as string
@@ -86,12 +87,16 @@ const Deploy: NextPage = () => {
             </>
           }
         />
-        <button
-          className="flex items-center gap-1 ml-2  pa-paragraph sm:hover:text-[#ecf1f0]"
-          onClick={() => deployWrite?.()}>
-          <span className="mb-1">deploy your contract</span>
-          <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
-        </button>
+        {isConnected ? (
+          <button
+            className="flex items-center gap-1 ml-2  pa-paragraph sm:hover:text-[#ecf1f0]"
+            onClick={() => deployWrite?.()}>
+            <span className="mb-1">deploy your contract</span>
+            <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+          </button>
+        ) : (
+          <ConnectButton />
+        )}
       </HeroWrapper>
     </div>
   )
