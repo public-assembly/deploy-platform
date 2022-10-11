@@ -44,7 +44,7 @@ const InputCurationPass: NextPage = () => {
         */}
       </Head>
       <Header route={'./inputSymbol'} />
-      <div className="flex flex-col gap-6 mt-12 sm:mt-16 sm:gap-8">
+      <div className="flex flex-col gap-6 mt-40 sm:mt-32 sm:gap-8">
         <HeroText
           text={
             <>
