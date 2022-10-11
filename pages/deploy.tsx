@@ -9,7 +9,6 @@ import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
 import { useRouter } from 'next/router'
 import { ConnectButton } from 'components/ConnectButton'
-import { useState, useEffect } from 'react'
 import { VercelDeploy } from 'components/VercelDeploy'
 
 type initialListings = any[]
@@ -79,9 +78,11 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      {txnDeployStatus !== 'success' ? (
-        <Header route="./inputMedia" routeName="media" />
-      ) : null}
+      {txnDeployStatus == 'success' ? (
+        <Header route="" routeName="" />
+      ) : (
+        <Header route={'./inputMedia'} routeName="media" />
+      )}
 
       <HeroWrapper>
         {txnDeployStatus !== 'success' ? (
@@ -95,22 +96,26 @@ const Deploy: NextPage = () => {
             }
           />
         ) : (
-          <HeroText
-            text={
-              <>
-                bring your platform&nbsp;<wbr></wbr>
-                <span className="hidden sm:block"></span>to&nbsp;
-                <span className="pa-displayLight">life</span>
-              </>
-            }
-          />
+          <div className="flex gap-6 sm:gap-8">
+            <HeroText
+              text={
+                <>
+                  bring your platform&nbsp;<wbr></wbr>
+                  <span className="hidden sm:block"></span>to&nbsp;
+                  <span className="pa-displayLight">life</span>
+                </>
+              }
+            />
+            <VercelDeploy />
+          </div>
         )}
+
         {isConnected ? (
           <>
             {txnDeployStatus == 'idle' ? (
               <div>
                 <button
-                  className="flex items-center gap-1 ml-2 pa-paragraph"
+                  className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph"
                   onClick={() => deployWrite?.()}>
                   <div className="flex items-center sm:hover:text-[#ecf1f0]">
                     <span className="mb-1">deploy your contract</span>
@@ -119,17 +124,17 @@ const Deploy: NextPage = () => {
                 </button>
               </div>
             ) : txnDeployStatus == 'loading' ? (
-              <div className="flex items-center gap-2 pa-paragraph">
+              <div className="flex items-center gap-2 ml-1 sm:ml-2 pa-paragraph">
                 <span className="mb-1">deploying your contract</span>
                 <IoIosRadioButtonOn className="animate-ping" size={8} />
               </div>
-            ) : txnDeployStatus == 'success' ? (
-              <VercelDeploy />
             ) : null}
           </>
-        ) : <div></div>
-        // <ConnectButton />
-        }
+        ) : (
+          <span className="ml-1 sm:ml-2">
+            <ConnectButton connectText="please connect your wallet" />
+          </span>
+        )}
       </HeroWrapper>
     </div>
   )
