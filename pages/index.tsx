@@ -1,14 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import {
-  IoMdReturnRight,
-  IoIosArrowForward,
-  IoIosArrowRoundForward,
-} from 'react-icons/io'
+import { IoIosArrowRoundForward } from 'react-icons/io'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
 import { HeroText } from 'components/HeroText'
+import { TextLoop } from 'react-text-loop-next'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -23,6 +20,8 @@ const Home: NextPage = () => {
     router.push('/inputTitle')
   }
 
+  const displayArray = ['platform', 'music player', 'mixtape', 'playlist']
+
   return (
     <div>
       <Head>
@@ -32,16 +31,19 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
+
       <Header route="" />
       <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
         <HeroText
           text={
             <>
-              create your&nbsp;<wbr></wbr><span className="hidden sm:block"></span>own&nbsp;
-              <span className="pa-displayLight">platform</span>
+              create your&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>own&nbsp;
+              <span className="pa-displayLight" data-replace='{"translate-y-12": "translate-y-0"}'>platform</span>
             </>
           }
         />
+
         <Link href={'./inputTitle'}>
           <a>
             <button className="flex items-center gap-1 pa-paragraph hover:text-[#ecf1f0]">

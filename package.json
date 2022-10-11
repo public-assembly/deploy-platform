@@ -16,6 +16,7 @@
     "@public-assembly/assemble-curation-factory": "^0.0.4",
     "@rainbow-me/rainbowkit": "^0.5.0",
     "@zoralabs/nft-drop-contracts": "^1.0.1",
+    "cxs": "^6.2.0",
     "ethers": "^5.7.0",
     "lodash": "^4.17.21",
     "next": "12.2.5",

@@ -4,33 +4,45 @@ import { Input } from 'components/Input'
 import { useRouter } from 'next/router'
 import { useFormStateProvider } from 'context'
 import { Header } from 'components/Header'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 import { HeroText } from 'components/HeroText'
 import { ContinueButton } from 'components/ContinueButton'
+import { IoIosClose } from 'react-icons/io'
+import { shortenAddress } from 'utils'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
 
   const { media, setMedia } = useFormStateProvider()
-  const [validMedia, setValidMedia] = useState(false)
 
-  const handleChange = (e: any) => {
-    setMedia(e.currentTarget.value)
-  }
+  // const [media, setMedia] = useState<string[]>([])
 
-  const handleValidation = () => {
-    if (media != null && ethers.utils.isAddress(media)) {
-      setValidMedia(true)
-      router.push('/deploy')
-    } else {
-      setValidMedia(false)
-    }
-  }
+  // const [validMedia, setValidMedia] = useState(false)
 
-  const handleKeyPress = (e: any) => {
-    if (e.key === 'Enter') {
-      handleValidation()
+  // const handleChange = (e: any) => {
+  //   setMedia(e.currentTarget.value)
+  // }
+
+  // const handleValidation = () => {
+  //   if (media != null && ethers.utils.isAddress(media)) {
+  //     setValidMedia(true)
+  //     router.push('/deploy')
+  //   } else {
+  //     setValidMedia(false)
+  //   }
+  // }
+
+  // working with local use state
+  const handleKeyDown = (e: any) => {
+    if (e.key === 'Enter' || e.code == 'Space') {
+      // https://dev.to/0shuvo0/lets-create-an-add-tags-input-with-react-js-d29
+      const value = e.currentTarget.value
+      if (!value.trim()) return
+      if (ethers.utils.isAddress(value)) {
+        setMedia([...media, value])
+        e.currentTarget.value = ''
+      }
     }
   }
 
@@ -48,18 +60,29 @@ const InputMedia: NextPage = () => {
         <HeroText
           text={
             <>
-              input your&nbsp;<wbr></wbr><span className='hidden sm:block'></span>first&nbsp;
+              input your&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>first&nbsp;
               <span className="pa-displayLight">song</span>
             </>
           }
         />
         <Input
-          value={media}
-          placeholder="e.g. 0x24535b3be22f1dbc..."
-          onChange={handleChange}
-          onKeyPress={handleKeyPress}
+          // value={media}
+          placeholder={media ? 'e.g. 0x24535b3be22f1dbc...' : ''}
+          // onChange={handleChange}
+          onKeyDown={handleKeyDown}
           route={'./deploy'}
         />
+        <div className="flex flex-wrap gap-3">
+          {media.map((media, index) => (
+            <div
+              className="flex justify-center items-center bg-black text-[#ecf1f0] px-2 py-1"
+              key={index}>
+              <span className="pl-2 mb-1">{shortenAddress(media)}</span>
+              <IoIosClose className="text-2xl sm:text-4.5" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

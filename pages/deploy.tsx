@@ -7,6 +7,7 @@ import { IoIosArrowRoundForward } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 import { VercelDeploy } from '../components/VercelDeploy'
+import { useEffect } from 'react'
 
 type initialListings = any[]
 
@@ -26,19 +27,45 @@ const Deploy: NextPage = () => {
   const tokenPassAddress = curationPass as string
   const initialListings = [] as initialListings
 
-  if (media != '') {
-    initialListings.push(
-      Object.values({
-        curatedAddress: media,
-        selectedTokenId: 0,
-        curator: address,
-        curationTargetType: 6,
-        sortOrder: 0,
-        hasTokenId: false,
-        chainId: 4,
-      })
-    )
+  // if (media != '') {
+  //   initialListings.push(
+  //     Object.values({
+  //       curatedAddress: media,
+  //       selectedTokenId: 0,
+  //       curator: address,
+  //       curationTargetType: 6,
+  //       sortOrder: 0,
+  //       hasTokenId: false,
+  //       chainId: 4,
+  //     })
+  //   )
+  // }
+
+  const listingStruct = {
+    curatedAddress: '',
+    selectedTokenId: 0,
+    curator: '',
+    curationTargetType: 6,
+    sortOrder: 0,
+    hasTokenId: false,
+    chainId: 1,
   }
+
+  const newListing = {...listingStruct, curatedAddress: 'media[0]'}
+
+  function createListingArray() {
+    Object.create(listingStruct)
+  }
+  
+  // (Object.create(listingDefault))
+
+  // Execute a function for each array element
+  useEffect(() => {
+    media?.forEach(createListingArray)
+  })
+  
+
+  console.log(media)
 
   console.log(initialListings)
 
