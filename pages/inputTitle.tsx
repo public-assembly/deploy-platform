@@ -5,7 +5,7 @@ import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
 import { HeroText } from 'components/HeroText'
-import { ContinueButton } from 'components/ContinueButton'
+import { HeroWrapper } from 'components/HeroWrapper'
 
 const InputTitle: NextPage = () => {
   const router = useRouter()
@@ -28,8 +28,8 @@ const InputTitle: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="" />
-      <div className="flex flex-col gap-6 mt-12 sm:mt-16 sm:gap-8">
+      <Header route="" routeName="" />
+      <HeroWrapper>
         <HeroText
           text={
             <>
@@ -45,7 +45,7 @@ const InputTitle: NextPage = () => {
           onKeyPress={handleKeyPress}
           route={'./inputSymbol'}
         />
-      </div>
+      </HeroWrapper>
     </div>
   )
 }

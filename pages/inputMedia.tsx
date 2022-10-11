@@ -7,7 +7,7 @@ import { Header } from 'components/Header'
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { HeroText } from 'components/HeroText'
-import { ContinueButton } from 'components/ContinueButton'
+import { HeroWrapper } from 'components/HeroWrapper'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
@@ -43,12 +43,13 @@ const InputMedia: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route={'./inputCurationPass'} />
-      <div className="flex flex-col gap-6 mt-12 sm:mt-16 sm:gap-8">
+      <Header route={'./inputCurationPass'} routeName="curation pass" />
+      <HeroWrapper>
         <HeroText
           text={
             <>
-              input your&nbsp;<wbr></wbr><span className='hidden sm:block'></span>first&nbsp;
+              input your&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>first&nbsp;
               <span className="pa-displayLight">song</span>
             </>
           }
@@ -60,7 +61,7 @@ const InputMedia: NextPage = () => {
           onKeyPress={handleKeyPress}
           route={'./deploy'}
         />
-      </div>
+      </HeroWrapper>
     </div>
   )
 }

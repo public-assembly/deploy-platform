@@ -7,7 +7,7 @@ import { Header } from 'components/Header'
 import { ethers } from 'ethers'
 import { useState } from 'react'
 import { HeroText } from 'components/HeroText'
-import { ContinueButton } from 'components/ContinueButton'
+import { HeroWrapper } from 'components/HeroWrapper'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
@@ -43,12 +43,14 @@ const InputCurationPass: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route={'./inputSymbol'} />
-      <div className="flex flex-col gap-6 mt-12 sm:mt-16 sm:gap-8">
+      <Header route={'./inputSymbol'} routeName="symbol" />
+      <HeroWrapper>
         <HeroText
           text={
             <>
-              designate a&nbsp;<wbr></wbr><span className="hidden sm:block"></span>curation&nbsp;<span className="pa-displayLight">pass</span>
+              designate a&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>curation&nbsp;
+              <span className="pa-displayLight">pass</span>
             </>
           }
         />
@@ -62,7 +64,7 @@ const InputCurationPass: NextPage = () => {
         {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />
         )} */}
-      </div>
+      </HeroWrapper>
     </div>
   )
 }

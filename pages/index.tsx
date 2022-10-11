@@ -1,14 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import {
-  IoMdReturnRight,
-  IoIosArrowForward,
-  IoIosArrowRoundForward,
-} from 'react-icons/io'
+import { IoIosArrowRoundForward } from 'react-icons/io'
 import { useRouter } from 'next/router'
 import { Header } from 'components/Header'
 import { HeroText } from 'components/HeroText'
+import { HeroWrapper } from 'components/HeroWrapper'
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -32,25 +29,26 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="" />
-      <div className="flex flex-col gap-2 mt-12 sm:mt-16 sm:gap-8">
+      <Header route="" routeName=''/>
+      <HeroWrapper>
         <HeroText
           text={
             <>
-              create your&nbsp;<wbr></wbr><span className="hidden sm:block"></span>own&nbsp;
+              create your&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>own&nbsp;
               <span className="pa-displayLight">platform</span>
             </>
           }
         />
         <Link href={'./inputTitle'}>
           <a>
-            <button className="flex items-center gap-1 pa-paragraph hover:text-[#ecf1f0]">
+            <button className="flex items-center gap-1 ml-2 pa-paragraph sm:hover:text-[#ecf1f0]">
               <span className="mb-1">get started</span>
               <IoIosArrowRoundForward size={32} />
             </button>
           </a>
         </Link>
-      </div>
+      </HeroWrapper>
     </div>
   )
 }
