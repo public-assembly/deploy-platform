@@ -1,5 +1,6 @@
 import { useFormStateProvider } from 'context'
 import { useEffect } from 'react'
+import { IoIosArrowRoundForward } from 'react-icons/io'
 
 export const VercelDeploy = () => {
   const { title, symbol } = useFormStateProvider()
@@ -31,8 +32,11 @@ export const VercelDeploy = () => {
 
   return (
     <a id="source_url" target="_blank" rel="noreferrer">
-      <button className="flex items-center pr-3 pl-3 py-1.5 rounded-2xl bg-slate-100">
-        Deploy to Vercel
+      <button>
+        <div className="flex items-center gap-1 pa-paragraph transition ease-in-out sm:hover:text-[#ecf1f0]">
+          <span className="hidden mb-2 sm:block">deploy to vercel</span>
+          <IoIosArrowRoundForward className="mb-1 text-3xl sm:text-4.5" />
+        </div>
       </button>
     </a>
   )

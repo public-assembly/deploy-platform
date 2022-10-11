@@ -91,23 +91,27 @@ const Deploy: NextPage = () => {
           }
         />
         {isConnected ? (
-          <button
-            className="flex items-center gap-1 ml-2  pa-paragraph"
-            onClick={() => deployWrite?.()}>
+          <>
             {txnDeployStatus == 'idle' ? (
-              <div className="flex items-center sm:hover:text-[#ecf1f0]">
-                <span className="mb-1">deploy your contract</span>
-                <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+              <div>
+                <button
+                  className="flex items-center gap-1 ml-2 pa-paragraph"
+                  onClick={() => deployWrite?.()}>
+                  <div className="flex items-center sm:hover:text-[#ecf1f0]">
+                    <span className="mb-1">deploy your contract</span>
+                    <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+                  </div>
+                </button>
               </div>
             ) : txnDeployStatus == 'loading' ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 pa-paragraph">
                 <span className="mb-1">deploying your contract</span>
                 <IoIosRadioButtonOn className="animate-ping" size={8} />
               </div>
             ) : txnDeployStatus == 'success' ? (
               <VercelDeploy />
             ) : null}
-          </button>
+          </>
         ) : (
           <ConnectButton />
         )}
