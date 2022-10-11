@@ -3,12 +3,13 @@ import Head from 'next/head'
 import { useFormStateProvider } from 'context'
 import { useAccount } from 'wagmi'
 import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import { IoIosArrowRoundForward, IoIosRadioButtonOn } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
-import { VercelDeploy } from '../components/VercelDeploy'
+import { useRouter } from 'next/router'
 import { ConnectButton } from 'components/ConnectButton'
+import { VercelDeploy } from 'components/VercelDeploy'
 
 type initialListings = any[]
 
@@ -21,6 +22,7 @@ const metadataRendererInit = '0x'
 const Deploy: NextPage = () => {
   const { title, symbol, curationPass, media } = useFormStateProvider()
   const { address, isConnected } = useAccount()
+  const router = useRouter()
 
   const curationManagerAddress = address as string
   const curatorTitle = title as string
@@ -76,26 +78,62 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="./inputMedia" routeName='media'/>
+      {txnDeployStatus == 'success' ? (
+        <Header route="" routeName="" />
+      ) : (
+        <Header route={'./inputMedia'} routeName="media" />
+      )}
+
       <HeroWrapper>
-        <HeroText
-          text={
-            <>
-              ready to create&nbsp;<span className="hidden sm:block"></span>
-              <wbr></wbr>
-              <span className="pa-displayLight">{`${title}?`}</span>
-            </>
-          }
-        />
-        {isConnected ? (
-          <button
-            className="flex items-center gap-1 ml-2  pa-paragraph sm:hover:text-[#ecf1f0]"
-            onClick={() => deployWrite?.()}>
-            <span className="mb-1">deploy your contract</span>
-            <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
-          </button>
+        {txnDeployStatus !== 'success' ? (
+          <HeroText
+            text={
+              <>
+                ready to create&nbsp;<span className="hidden sm:block"></span>
+                <wbr></wbr>
+                <span className="pa-displayLight">{`${title}?`}</span>
+              </>
+            }
+          />
         ) : (
-          <ConnectButton />
+          <div className="flex flex-col gap-6 sm:gap-8">
+            <HeroText
+              text={
+                <>
+                  bring your platform&nbsp;<wbr></wbr>
+                  <span className="hidden sm:block"></span>to&nbsp;
+                  <span className="pa-displayLight">life</span>
+                </>
+              }
+            />
+            <VercelDeploy />
+          </div>
+        )}
+
+        {isConnected ? (
+          <>
+            {txnDeployStatus == 'idle' ? (
+              <div>
+                <button
+                  className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph"
+                  onClick={() => deployWrite?.()}>
+                  <div className="flex items-center sm:hover:text-[#ecf1f0]">
+                    <span className="mb-1">deploy your contract</span>
+                    <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+                  </div>
+                </button>
+              </div>
+            ) : txnDeployStatus == 'loading' ? (
+              <div className="flex items-center gap-2 ml-1 sm:ml-2 pa-paragraph">
+                <span className="mb-1">deploying your contract</span>
+                <IoIosRadioButtonOn className="animate-ping" size={8} />
+              </div>
+            ) : null}
+          </>
+        ) : (
+          <span className="ml-1 sm:ml-2">
+            <ConnectButton connectText="please connect your wallet" />
+          </span>
         )}
       </HeroWrapper>
     </div>

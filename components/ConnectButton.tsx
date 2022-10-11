@@ -1,8 +1,9 @@
 import { ConnectButton as RKConnectButton } from '@rainbow-me/rainbowkit'
+import { connect } from 'http2'
 
-export function ConnectButton({ ...props }) {
+export function ConnectButton({ connectText, ...props }: { connectText: string }) {
   return (
-    <div className="connect-button-wrapper relative overflow-hidden" {...props}>
+    <div className="connect-button-wrapper relative overflow-hidden " {...props}>
       <RKConnectButton.Custom>
         {({ account, chain, openAccountModal, openConnectModal, mounted }) => {
           return (
@@ -10,8 +11,10 @@ export function ConnectButton({ ...props }) {
               {(() => {
                 if (!mounted || !account || !chain) {
                   return (
-                    <button onClick={openConnectModal} className="pa-paragraph ">
-                      connect wallet
+                    <button
+                      onClick={openConnectModal}
+                      className="pa-paragraph sm:hover:text-[#ecf1f0] ">
+                      {connectText}
                     </button>
                   )
                 }
@@ -24,7 +27,7 @@ export function ConnectButton({ ...props }) {
                 }
                 return (
                   <button onClick={openAccountModal}>
-                    <div className="flex items-center gap-2 lowercase pa-paragraph ">
+                    <div className="flex items-center gap-2 lowercase pa-paragraph sm:hover:text-[#ecf1f0]">
                       {account.displayName}
                     </div>
                   </button>

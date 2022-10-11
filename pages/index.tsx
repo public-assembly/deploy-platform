@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         />
         <Link href={'./inputTitle'}>
           <a>
-            <button className="flex items-center gap-1 ml-2 pa-paragraph sm:hover:text-[#ecf1f0]">
+            <button className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph sm:hover:text-[#ecf1f0]">
               <span className="mb-1">get started</span>
               <IoIosArrowRoundForward size={32} />
             </button>

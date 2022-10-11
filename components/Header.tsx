@@ -7,8 +7,8 @@ export function Header({ route, routeName }: { route: string; routeName: string 
 
   return (
     <header className="flex flex-row justify-between items-center w-full">
-      {route == '' ? null : <BackButton route={route} routeName={routeName} />}
-      {router.asPath == '/deploy' ? <ConnectButton /> : null}
+      {route == '' ? <div></div> : <BackButton route={route} routeName={routeName} />}
+      {router.asPath == '/deploy' ? <ConnectButton connectText='connect wallet' /> : null}
     </header>
   )
 }
