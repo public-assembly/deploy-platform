@@ -23,7 +23,7 @@ const InputTitle: NextPage = () => {
   return (
     <div>
       <Seo
-        title="Deploy"
+        title="Title"
         description="The place to begin experimenting with onchain curation."
       />
       <Header route="" routeName="" />

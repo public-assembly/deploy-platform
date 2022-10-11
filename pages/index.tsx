@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Seo
-        title="Deploy"
+        title="Create"
         description="The place to begin experimenting with onchain curation."
       />
       <Header route="https://www.neosound.xyz/" routeName='neosound'/>

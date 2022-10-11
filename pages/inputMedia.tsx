@@ -38,7 +38,7 @@ const InputMedia: NextPage = () => {
   return (
     <div>
       <Seo
-        title="Deploy"
+        title="Media"
         description="The place to begin experimenting with onchain curation."
       />
       <Header route={'./inputCurationPass'} routeName="edit curation pass" />

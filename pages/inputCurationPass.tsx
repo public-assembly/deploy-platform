@@ -38,7 +38,7 @@ const InputCurationPass: NextPage = () => {
   return (
     <div>
       <Seo
-        title="Deploy"
+        title="Pass"
         description="The place to begin experimenting with onchain curation."
       />
       <Header route={'./inputSymbol'} routeName="edit symbol" />

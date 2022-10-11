@@ -22,7 +22,7 @@ const InputSymbol: NextPage = () => {
   return (
     <div>
       <Seo
-        title="Deploy"
+        title="Symbol"
         description="The place to begin experimenting with onchain curation."
       />
       <Header route={'./inputTitle'} routeName='edit title'/>
