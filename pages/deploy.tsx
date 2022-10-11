@@ -3,12 +3,13 @@ import Head from 'next/head'
 import { useFormStateProvider } from 'context'
 import { useAccount } from 'wagmi'
 import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import { IoIosArrowRoundForward, IoIosRadioButtonOn } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
-import { VercelDeploy } from '../components/VercelDeploy'
+import { useRouter } from 'next/router'
 import { ConnectButton } from 'components/ConnectButton'
+import { useState, useEffect } from 'react'
 
 type initialListings = any[]
 
@@ -21,6 +22,14 @@ const metadataRendererInit = '0x'
 const Deploy: NextPage = () => {
   const { title, symbol, curationPass, media } = useFormStateProvider()
   const { address, isConnected } = useAccount()
+  const router = useRouter()
+  const [push, setPush] = useState(false)
+
+  useEffect(() => {
+    {
+      push && router.push('./success')
+    }
+  }, [push])
 
   const curationManagerAddress = address as string
   const curatorTitle = title as string
@@ -89,20 +98,20 @@ const Deploy: NextPage = () => {
         />
         {isConnected ? (
           <button
-            className="flex items-center gap-1 ml-2  pa-paragraph sm:hover:text-[#ecf1f0]"
+            className="flex items-center gap-1 ml-2  pa-paragraph"
             onClick={() => deployWrite?.()}>
             {txnDeployStatus == 'idle' ? (
-              <div>
+              <div className="flex items-center sm:hover:text-[#ecf1f0]">
                 <span className="mb-1">deploy your contract</span>
                 <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
               </div>
             ) : txnDeployStatus == 'loading' ? (
-              <div>
-                <span className="mb-1">deploying your contract...</span>
-                <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+              <div className="flex items-center gap-2">
+                <span className="mb-1">deploying your contract</span>
+                <IoIosRadioButtonOn className="animate-ping" size={8} />
               </div>
             ) : txnDeployStatus == 'success' ? (
-              <VercelDeploy />
+              push == true
             ) : null}
           </button>
         ) : (
