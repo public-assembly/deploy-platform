@@ -79,17 +79,32 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="./inputMedia" routeName="media" />
+      {txnDeployStatus !== 'success' ? (
+        <Header route="./inputMedia" routeName="media" />
+      ) : null}
+
       <HeroWrapper>
-        <HeroText
-          text={
-            <>
-              ready to create&nbsp;<span className="hidden sm:block"></span>
-              <wbr></wbr>
-              <span className="pa-displayLight">{`${title}?`}</span>
-            </>
-          }
-        />
+        {txnDeployStatus !== 'success' ? (
+          <HeroText
+            text={
+              <>
+                ready to create&nbsp;<span className="hidden sm:block"></span>
+                <wbr></wbr>
+                <span className="pa-displayLight">{`${title}?`}</span>
+              </>
+            }
+          />
+        ) : (
+          <HeroText
+            text={
+              <>
+                bring your platform&nbsp;<wbr></wbr>
+                <span className="hidden sm:block"></span>to&nbsp;
+                <span className="pa-displayLight">life</span>
+              </>
+            }
+          />
+        )}
         {isConnected ? (
           <>
             {txnDeployStatus == 'idle' ? (
@@ -112,9 +127,9 @@ const Deploy: NextPage = () => {
               <VercelDeploy />
             ) : null}
           </>
-        ) : (
-          <ConnectButton />
-        )}
+        ) : <div></div>
+        // <ConnectButton />
+        }
       </HeroWrapper>
     </div>
   )
