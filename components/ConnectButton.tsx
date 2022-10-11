@@ -24,7 +24,7 @@ export function ConnectButton({ ...props }) {
                 }
                 return (
                   <button onClick={openAccountModal}>
-                    <div className="flex items-center gap-2 pa-paragraph ">
+                    <div className="flex items-center gap-2 lowercase pa-paragraph ">
                       {account.displayName}
                     </div>
                   </button>

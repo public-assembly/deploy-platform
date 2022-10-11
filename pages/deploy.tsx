@@ -76,7 +76,7 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="./inputMedia" />
+      <Header route="./inputMedia" routeName='media'/>
       <HeroWrapper>
         <HeroText
           text={

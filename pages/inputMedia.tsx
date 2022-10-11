@@ -43,12 +43,13 @@ const InputMedia: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route={'./inputCurationPass'} />
+      <Header route={'./inputCurationPass'} routeName="curation pass" />
       <HeroWrapper>
         <HeroText
           text={
             <>
-              input your&nbsp;<wbr></wbr><span className='hidden sm:block'></span>first&nbsp;
+              input your&nbsp;<wbr></wbr>
+              <span className="hidden sm:block"></span>first&nbsp;
               <span className="pa-displayLight">song</span>
             </>
           }
