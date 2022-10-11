@@ -14,7 +14,7 @@ export const VercelDeploy = () => {
     const demoTitle = '&demo-title=Neosound'
     const demoDescription =
       '&demo-description=Neosound is a forkable modular music player designed to aid in the creation of collaborative and intimate listening spaces for digital communities.'
-    const demoUrl = '&demo-url=https://neosound.vercel.app/'
+    const demoUrl = '&demo-url=https://neosound.xyz/'
     const demoImage =
       '&demo-image=https://ipfs.io/ipfs/bafybeieveiubicn6u2mgo2ltr2qo4a3nkdnhchzmjacymzyekxdckosm4m'
     const sourceUrl =

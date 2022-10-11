@@ -76,7 +76,7 @@ const Deploy: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         */}
       </Head>
-      <Header route="./inputMedia" routeName='media'/>
+      <Header route="./inputMedia" routeName="media" />
       <HeroWrapper>
         <HeroText
           text={
@@ -91,8 +91,19 @@ const Deploy: NextPage = () => {
           <button
             className="flex items-center gap-1 ml-2  pa-paragraph sm:hover:text-[#ecf1f0]"
             onClick={() => deployWrite?.()}>
-            <span className="mb-1">deploy your contract</span>
-            <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+            {txnDeployStatus == 'idle' ? (
+              <div>
+                <span className="mb-1">deploy your contract</span>
+                <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+              </div>
+            ) : txnDeployStatus == 'loading' ? (
+              <div>
+                <span className="mb-1">deploying your contract...</span>
+                <IoIosArrowRoundForward className="text-3xl sm:text-4.5" />
+              </div>
+            ) : txnDeployStatus == 'success' ? (
+              <VercelDeploy />
+            ) : null}
           </button>
         ) : (
           <ConnectButton />
