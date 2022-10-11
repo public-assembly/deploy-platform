@@ -9,7 +9,7 @@
 
 /* LAYOUT */
 .pa-pageLayout {
-  @apply px-4 sm:px-8 
+  @apply px-4 sm:px-8 h-screen
   /* sm:container */
   /* mx-auto */
 }
