@@ -10,6 +10,7 @@ import { HeroWrapper } from 'components/HeroWrapper'
 import { useRouter } from 'next/router'
 import { ConnectButton } from 'components/ConnectButton'
 import { useState, useEffect } from 'react'
+import { VercelDeploy } from 'components/VercelDeploy'
 
 type initialListings = any[]
 
@@ -23,13 +24,6 @@ const Deploy: NextPage = () => {
   const { title, symbol, curationPass, media } = useFormStateProvider()
   const { address, isConnected } = useAccount()
   const router = useRouter()
-  const [push, setPush] = useState(false)
-
-  useEffect(() => {
-    {
-      push && router.push('./success')
-    }
-  }, [push])
 
   const curationManagerAddress = address as string
   const curatorTitle = title as string
@@ -111,7 +105,7 @@ const Deploy: NextPage = () => {
                 <IoIosRadioButtonOn className="animate-ping" size={8} />
               </div>
             ) : txnDeployStatus == 'success' ? (
-              push == true
+              <VercelDeploy />
             ) : null}
           </button>
         ) : (
