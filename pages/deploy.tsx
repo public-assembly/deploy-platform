@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useFormStateProvider } from 'context'
-import { useAccount } from 'wagmi'
+import { useAccount, useNetwork } from 'wagmi'
 import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
 import { IoIosArrowRoundForward, IoIosRadioButtonOn } from 'react-icons/io'
 import { Header } from '../components/Header'
@@ -23,6 +23,7 @@ const metadataRendererInit = '0x'
 const Deploy: NextPage = () => {
   const { title, symbol, curationPass, media } = useFormStateProvider()
   const { address, isConnected } = useAccount()
+  const { chain, chains } = useNetwork()
   const router = useRouter()
 
   const curationManagerAddress = address as string
@@ -113,6 +114,7 @@ const Deploy: NextPage = () => {
             {txnDeployStatus == 'idle' ? (
               <div>
                 <button
+                  disabled={Boolean(chain)}
                   className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph"
                   onClick={() => deployWrite?.()}>
                   <div className="flex items-center sm:hover:text-[#ecf1f0]">

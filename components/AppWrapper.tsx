@@ -22,6 +22,7 @@ export function AppWrapper({ children }: { children: JSX.Element }) {
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider
         chains={chains}
+        initialChain={chain.goerli}
         coolMode
         theme={lightTheme({
           accentColor: 'black',
