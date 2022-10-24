@@ -10,7 +10,7 @@ const { chains, provider } = configureChains(
   [alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY })]
 )
 
-console.log(process.env.ALCHEMY_API_KEY)
+console.log('Alchemy key: ', process.env.ALCHEMY_API_KEY)
 
 const { connectors } = getDefaultWallets({
   appName: 'Deploy Platform',
