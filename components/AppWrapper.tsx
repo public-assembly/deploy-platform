@@ -2,10 +2,14 @@ import NextNProgress from 'nextjs-progressbar'
 import { getDefaultWallets, RainbowKitProvider, lightTheme } from '@rainbow-me/rainbowkit'
 import { createClient, chain, configureChains, WagmiConfig } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
+import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { SWRConfig } from 'swr'
-import '@rainbow-me/rainbowkit/styles.css';
+import '@rainbow-me/rainbowkit/styles.css'
 
-const { chains, provider } = configureChains([chain.goerli], [publicProvider()])
+const { chains, provider } = configureChains(
+  [chain.goerli],
+  [alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY }), publicProvider()]
+)
 const { connectors } = getDefaultWallets({
   appName: 'Deploy Platform',
   chains,
