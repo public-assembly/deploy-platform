@@ -8,7 +8,10 @@ import '@rainbow-me/rainbowkit/styles.css'
 
 const { chains, provider } = configureChains(
   [chain.goerli],
-  [alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY }), publicProvider()]
+  [
+    alchemyProvider({ apiKey: process.env.ALCHEMY_API_KEY, priority: 0 }),
+    publicProvider({ priority: 1 }),
+  ]
 )
 const { connectors } = getDefaultWallets({
   appName: 'Deploy Platform',
