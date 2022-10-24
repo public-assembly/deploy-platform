@@ -16,6 +16,7 @@
     "@public-assembly/curation-interactions": "^0.0.18-pre",
     "@rainbow-me/rainbowkit": "^0.5.0",
     "@zoralabs/nft-drop-contracts": "^1.0.1",
+    "@zoralabs/zdk": "^2.2.0",
     "ethers": "^5.7.0",
     "lodash": "^4.17.21",
     "next": "12.2.5",

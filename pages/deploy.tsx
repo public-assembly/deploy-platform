@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import { useFormStateProvider } from 'context'
 import { useAccount, useNetwork } from 'wagmi'
 import { useCurationFactory } from '@public-assembly/curation-interactions'

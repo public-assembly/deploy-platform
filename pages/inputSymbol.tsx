@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
