@@ -23,6 +23,7 @@ export const VercelDeploy = () => {
     const sourceUrl =
       'https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpublic-assembly%2Fneosound.git' +
       envKeys +
+      envDescription +
       envLink +
       projectName +
       repositoryName +
