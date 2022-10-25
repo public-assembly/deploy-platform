@@ -6,7 +6,8 @@ export const VercelDeploy = () => {
   const { title, symbol } = useFormStateProvider()
 
   useEffect(() => {
-    const envKeys = '&env=NEXT_PUBLIC_CHAIN_ID,NEXT_PUBLIC_CURATION_CONTRACT'
+    const envKeys =
+      '&env=NEXT_PUBLIC_CHAIN_ID,NEXT_PUBLIC_CURATION_CONTRACT,NEXT_PUBLIC_ALCHEMY_KEY_GOERLI'
     // '&env=NEXT_PUBLIC_SITE_TITLE, NEXT_PUBLIC_APP_ID, NEXT_PUBLIC_SITE_DESCRIPTION, NEXT_PUBLIC_TWITTER_HANDLE, NEXT_PUBLIC_WEBSITE_URL, NEXT_PUBLIC_CHAIN_ID, NEXT_PUBLIC_ALCHEMY_KEY_GOERLI, NEXT_PUBLIC_CURATION_CONTRACT'
     const envDescription = '&envDescription=Have questions about these requirements?'
     const envLink =
