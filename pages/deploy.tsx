@@ -113,7 +113,6 @@ const Deploy: NextPage = () => {
             {txnDeployStatus == 'idle' ? (
               <div>
                 <button
-                  disabled={Boolean(chain)}
                   className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph"
                   onClick={() => deployWrite?.()}>
                   <div className="flex items-center sm:hover:text-[#ecf1f0]">
