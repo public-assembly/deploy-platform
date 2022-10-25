@@ -11,7 +11,7 @@ export const VercelDeploy = () => {
     // '&env=NEXT_PUBLIC_SITE_TITLE, NEXT_PUBLIC_APP_ID, NEXT_PUBLIC_SITE_DESCRIPTION, NEXT_PUBLIC_TWITTER_HANDLE, NEXT_PUBLIC_WEBSITE_URL, NEXT_PUBLIC_CHAIN_ID, NEXT_PUBLIC_ALCHEMY_KEY_GOERLI, NEXT_PUBLIC_CURATION_CONTRACT'
     // const envDescription = undefined
     const envLink =
-      '&env-link=https://github.com/public-assembly/neosound/blob/main/.env.example'
+      '&envLink=https://github.com/public-assembly/neosound/blob/main/.env.example'
     const projectName = '&project-name=' + title
     const repositoryName = '&repository-name=' + title
     const demoTitle = '&demo-title=Neosound'
