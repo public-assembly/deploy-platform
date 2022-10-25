@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import { Input } from 'components/Input'
 import { useFormStateProvider } from 'context'
 import { useRouter } from 'next/router'
@@ -12,7 +11,6 @@ const InputTitle: NextPage = () => {
   const router = useRouter()
 
   const { title, setTitle } = useFormStateProvider()
-  console.log('title: ', title)
 
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {

@@ -1,8 +1,7 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import { useFormStateProvider } from 'context'
 import { useAccount, useNetwork } from 'wagmi'
-import { useCuratorFactory } from '@public-assembly/assemble-curation-factory'
+import { useCurationFactory } from '@public-assembly/curation-interactions'
 import { IoIosArrowRoundForward, IoIosRadioButtonOn } from 'react-icons/io'
 import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
@@ -54,7 +53,7 @@ const Deploy: NextPage = () => {
     deployWrite,
     deployWriteError,
     txnDeployStatus,
-  } = useCuratorFactory({
+  } = useCurationFactory({
     curatorFactoryAddress,
     curationManagerAddress,
     curatorTitle,
