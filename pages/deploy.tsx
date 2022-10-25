@@ -45,7 +45,7 @@ const Deploy: NextPage = () => {
     )
   }
 
-  console.log(initialListings)
+  console.log('Initial listings: ', initialListings)
 
   const {
     deployConfig,
