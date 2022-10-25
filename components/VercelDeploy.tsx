@@ -7,10 +7,10 @@ export const VercelDeploy = () => {
 
   useEffect(() => {
     const envKeys =
-      //  '&env=NEXT_PUBLIC_SITE_TITLE, NEXT_PUBLIC_APP_ID, NEXT_PUBLIC_SITE_DESCRIPTION, NEXT_PUBLIC_TWITTER_HANDLE, NEXT_PUBLIC_WEBSITE_URL, NEXT_PUBLIC_CHAIN_ID, NEXT_PUBLIC_CURATION_CONTRACT'
-      '&env=NEXT_PUBLIC_CURATION_CONTRACT'
+      '&env=NEXT_PUBLIC_SITE_TITLE, NEXT_PUBLIC_APP_ID, NEXT_PUBLIC_SITE_DESCRIPTION, NEXT_PUBLIC_TWITTER_HANDLE, NEXT_PUBLIC_WEBSITE_URL, NEXT_PUBLIC_CHAIN_ID, NEXT_PUBLIC_ALCHEMY_KEY_GOERLI, NEXT_PUBLIC_CURATION_CONTRACT'
     // const envDescription = undefined
-    // const envLink = undefined
+    const envLink =
+      '&env-link=https://github.com/public-assembly/neosound/blob/main/.env.example'
     const projectName = '&project-name=' + title
     const repositoryName = '&repository-name=' + title
     const demoTitle = '&demo-title=Neosound'
@@ -22,6 +22,7 @@ export const VercelDeploy = () => {
     const sourceUrl =
       'https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpublic-assembly%2Fneosound.git' +
       envKeys +
+      envLink +
       projectName +
       repositoryName +
       demoTitle +
