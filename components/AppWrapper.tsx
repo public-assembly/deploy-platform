@@ -10,7 +10,7 @@ const { chains, provider } = configureChains(
   [chain.goerli],
   [
     alchemyProvider({ apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY, priority: 0 }),
-    publicProvider(),
+    publicProvider({ priority: 1 }),
   ]
 )
 
