@@ -16,7 +16,7 @@ type initialListings = any[]
 const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
 const initialPause = false
 const curationLimit = 0
-const metadataRenderer = '0x0000000000000000000000000000000000000000'
+const metadataRenderer = '0x7D6A95869D1c75fADAF7fECB7Cfa43037A450232'
 const metadataRendererInit = '0x'
 
 const Deploy: NextPage = () => {
