@@ -8,32 +8,36 @@ import { useState } from 'react'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
 import { Seo } from 'components/Seo'
+import { InputError } from 'components/InputError'
 
 const InputCurationPass: NextPage = () => {
   const router = useRouter()
 
   const { curationPass, setCurationPass } = useFormStateProvider()
-  const [validAddress, setValidAddress] = useState(false)
+  const [validAddress, setValidAddress] = useState(true)
 
   const handleChange = (e: any) => {
     setCurationPass(e.currentTarget.value)
-    handleValidation()
   }
 
   const handleValidation = () => {
     if (curationPass != null && ethers.utils.isAddress(curationPass)) {
       setValidAddress(true)
-      // router.push('/inputMedia')
+      router.push('/inputMedia')
     } else {
       setValidAddress(false)
     }
   }
 
-  // const handleKeyPress = (e: any) => {
-  //   if (e.key === 'Enter') {
-  //     handleValidation()
-  //   }
-  // }
+  const handleClick = (e: any) => {
+    handleValidation()
+  }
+
+  const handleKeyPress = (e: any) => {
+    if (e.key === 'Enter') {
+      handleValidation()
+    }
+  }
 
   return (
     <div>
@@ -56,26 +60,15 @@ const InputCurationPass: NextPage = () => {
           value={curationPass}
           placeholder="e.g. 0x34fe32e6442d14d9..."
           onChange={handleChange}
-          // onKeyPress={handleKeyPress}
-          route={'./inputMedia'}
           validInput={validAddress}
+          onClick={handleClick}
         />
-        {/* {!validAddress && (
-          <InputError errorMessage={'Please enter a valid NFT contract address'} />
-        )} */}
+        {!validAddress && (
+          <InputError errorMessage={'Please enter a valid Ethereum address'} />
+        )}
       </HeroWrapper>
     </div>
   )
 }
 
 export default InputCurationPass
-
-{
-  /* <a
-  className="underline text-[#006ff1] hover:text-[#0c1413]"
-  href="https://create.zora.co/create/edition"
-  target="_blank"
-  rel="noreferrer">
-  make one here
-</a> */
-}

@@ -12,6 +12,10 @@ const InputSymbol: NextPage = () => {
 
   const { symbol, setSymbol } = useFormStateProvider()
 
+  const handleClick = (e: any) => {
+    router.push('/inputSymbol')
+  }
+
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
       router.push('/inputCurationPass')
@@ -24,7 +28,7 @@ const InputSymbol: NextPage = () => {
         title="Symbol"
         description="The place to begin experimenting with onchain curation."
       />
-      <Header route={'./inputTitle'} routeName='edit title'/>
+      <Header route={'./inputTitle'} routeName="edit title" />
       <HeroWrapper>
         <HeroText
           text={
@@ -38,8 +42,7 @@ const InputSymbol: NextPage = () => {
           value={symbol}
           placeholder="e.g. NEO"
           onChange={(e: any) => setSymbol(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-          route={'./inputCurationPass'}
+          onClick={handleClick}
         />
       </HeroWrapper>
     </div>

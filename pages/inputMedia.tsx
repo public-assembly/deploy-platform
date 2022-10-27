@@ -8,6 +8,7 @@ import { ethers } from 'ethers'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
 import { Seo } from 'components/Seo'
+import { InputError } from 'components/InputError'
 
 const InputMedia: NextPage = () => {
   const router = useRouter()
@@ -26,6 +27,10 @@ const InputMedia: NextPage = () => {
     } else {
       setValidMedia(false)
     }
+  }
+
+  const handleClick = (e: any) => {
+    handleValidation()
   }
 
   const handleKeyPress = (e: any) => {
@@ -55,18 +60,14 @@ const InputMedia: NextPage = () => {
           value={media}
           placeholder="e.g. 0x24535b3be22f1dbc..."
           onChange={handleChange}
-          onKeyPress={handleKeyPress}
-          route={'./deploy'}
+          onClick={handleClick}
         />
+        {!validMedia && (
+          <InputError errorMessage={'Please enter a valid Ethereum address'} />
+        )}
       </HeroWrapper>
     </div>
   )
 }
 
 export default InputMedia
-
-/* <button
-onClick={() => router.push('/deploy')}
-className="underline text-[#006ff1] hover:text-[#0c1413]">
-skip ahead!
-</button> */
