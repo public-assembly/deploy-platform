@@ -14,7 +14,7 @@ const InputMedia: NextPage = () => {
   const router = useRouter()
 
   const { media, setMedia } = useFormStateProvider()
-  const [validMedia, setValidMedia] = useState(false)
+  const [validMedia, setValidMedia] = useState(true)
 
   const handleChange = (e: any) => {
     setMedia(e.currentTarget.value)

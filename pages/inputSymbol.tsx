@@ -13,7 +13,7 @@ const InputSymbol: NextPage = () => {
   const { symbol, setSymbol } = useFormStateProvider()
 
   const handleClick = (e: any) => {
-    router.push('/inputSymbol')
+    router.push('/inputCurationPass')
   }
 
   const handleKeyPress = (e: any) => {
