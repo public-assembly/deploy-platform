@@ -17,22 +17,23 @@ const InputCurationPass: NextPage = () => {
 
   const handleChange = (e: any) => {
     setCurationPass(e.currentTarget.value)
+    handleValidation()
   }
 
   const handleValidation = () => {
     if (curationPass != null && ethers.utils.isAddress(curationPass)) {
       setValidAddress(true)
-      router.push('/inputMedia')
+      // router.push('/inputMedia')
     } else {
       setValidAddress(false)
     }
   }
 
-  const handleKeyPress = (e: any) => {
-    if (e.key === 'Enter') {
-      handleValidation()
-    }
-  }
+  // const handleKeyPress = (e: any) => {
+  //   if (e.key === 'Enter') {
+  //     handleValidation()
+  //   }
+  // }
 
   return (
     <div>
@@ -55,8 +56,9 @@ const InputCurationPass: NextPage = () => {
           value={curationPass}
           placeholder="e.g. 0x34fe32e6442d14d9..."
           onChange={handleChange}
-          onKeyPress={handleKeyPress}
+          // onKeyPress={handleKeyPress}
           route={'./inputMedia'}
+          validInput={validAddress}
         />
         {/* {!validAddress && (
           <InputError errorMessage={'Please enter a valid NFT contract address'} />
