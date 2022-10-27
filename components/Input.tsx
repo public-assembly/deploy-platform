@@ -1,21 +1,17 @@
-import { ContinueButton } from './ContinueButton'
+import { ContinueButton, ContinueButtonProps } from './ContinueButton'
 
-type InputProps = {
+type InputProps = ContinueButtonProps & {
   placeholder?: string
   value?: string
-  onChange?: any /* Specify Typings */
-  onKeyPress?: any /* Specify Typings */
-  route: string /* How would you specify this is a prop from ContinueButton? */
-  disabled?: boolean /* How would you specify this is a prop from ContinueButton? */
+  onChange?: any
 }
 
 export const Input = ({
   placeholder,
   value,
   onChange,
-  onKeyPress,
-  route,
-  disabled
+  validInput,
+  onClick,
 }: InputProps) => {
   return (
     <div className="flex items-center justify-between pa-input pa-paragraph w-full sm:w-3/5 h-14 sm:h-20 border-3 border-[#0c1413] sm:border-4 ;">
@@ -25,10 +21,8 @@ export const Input = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        onKeyPress={onKeyPress}
-        disabled={disabled}
       />
-      <ContinueButton route={route} />
+      <ContinueButton validInput={validInput} onClick={onClick} />
     </div>
   )
 }

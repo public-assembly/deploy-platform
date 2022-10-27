@@ -1,7 +1,7 @@
 import { IoIosArrowRoundBack } from 'react-icons/io'
 import Link from 'next/link'
 
-type BackButtonProps = {
+export type BackButtonProps = {
   route: string
   routeName: string
 }

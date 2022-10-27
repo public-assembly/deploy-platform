@@ -12,6 +12,10 @@ const InputTitle: NextPage = () => {
 
   const { title, setTitle } = useFormStateProvider()
 
+  const handleClick = (e: any) => {
+    router.push('/inputSymbol')
+  }
+
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
       router.push('/inputSymbol')
@@ -38,8 +42,7 @@ const InputTitle: NextPage = () => {
           value={title}
           placeholder={'e.g. Neosound'}
           onChange={(e: any) => setTitle(e.currentTarget.value)}
-          onKeyPress={handleKeyPress}
-          route={'./inputSymbol'}
+          onClick={handleClick}
         />
       </HeroWrapper>
     </div>
