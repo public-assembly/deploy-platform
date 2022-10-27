@@ -1,7 +1,7 @@
 import { IoIosArrowRoundForward } from 'react-icons/io'
 import Link from 'next/link'
 
-type ContinueButtonProps = {
+export type ContinueButtonProps = {
   route: string
   disabled?: boolean
 }
