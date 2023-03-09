@@ -40,10 +40,7 @@ const Deploy: NextPage = () => {
 
   return (
     <div>
-      <Seo
-        title="Deploy"
-        description="The place to begin experimenting with onchain curation."
-      />
+      <Seo title="Drop Page" description="Drop music on your own custom domain." />
       <Header
         route="https://github.com/SweetmanTech/deploy-platform"
         routeName="open source"
