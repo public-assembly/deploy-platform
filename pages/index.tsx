@@ -50,9 +50,9 @@ const Deploy: NextPage = () => {
           <HeroText
             text={
               <>
-                bring your music nft&nbsp;<wbr></wbr>
-                <span className="hidden sm:block"></span>to&nbsp;
-                <span className="pa-displayLight">your drop page</span>
+                create your&nbsp;<wbr></wbr>
+                <span className="hidden sm:block"></span>own&nbsp;
+                <span className="pa-displayLight">drop page</span>
               </>
             }
           />
