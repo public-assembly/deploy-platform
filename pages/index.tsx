@@ -1,53 +1,69 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
-import { IoIosArrowRoundForward } from 'react-icons/io'
-import { useRouter } from 'next/router'
-import { Header } from 'components/Header'
+import { useFormStateProvider } from 'context'
+import { useAccount, useNetwork } from 'wagmi'
+import { useCurationFactory } from '@public-assembly/curation-interactions'
+import { IoIosArrowRoundForward, IoIosRadioButtonOn } from 'react-icons/io'
+import { Header } from '../components/Header'
 import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
+import { useRouter } from 'next/router'
+import { ConnectButton } from 'components/ConnectButton'
+import { VercelDeploy } from 'components/VercelDeploy'
 import { Seo } from 'components/Seo'
 
-const Home: NextPage = () => {
-  const router = useRouter()
+type initialListings = any[]
 
-  const handleKeyDown = (e: any) => {
-    if (e.key === 'Enter') {
-      router.push('/inputTitle')
-    }
-  }
+const curatorFactoryAddress = '0xcc0ddff0ea076AbfB837117C5AaC6f48483e5B98'
+const initialPause = false
+const curationLimit = 0
+const metadataRenderer = '0x7D6A95869D1c75fADAF7fECB7Cfa43037A450232'
+const metadataRendererInit = '0x'
 
-  const handleClick = (e: any) => {
-    router.push('/inputTitle')
+const Deploy: NextPage = () => {
+  const { title, symbol, curationPass, media } = useFormStateProvider()
+  const { address, isConnected } = useAccount()
+  const initialListings = [] as initialListings
+
+  if (media != '') {
+    initialListings.push(
+      Object.values({
+        curatedAddress: media,
+        selectedTokenId: 0,
+        curator: address,
+        curationTargetType: 6,
+        sortOrder: 0,
+        hasTokenId: false,
+        chainId: 4,
+      })
+    )
   }
 
   return (
     <div>
       <Seo
-        title="Create"
+        title="Deploy"
         description="The place to begin experimenting with onchain curation."
       />
-      <Header route="https://www.neosound.xyz/" routeName='neosound'/>
+      <Header
+        route="https://github.com/SweetmanTech/deploy-platform"
+        routeName="open source"
+      />
       <HeroWrapper>
-        <HeroText
-          text={
-            <>
-              create your&nbsp;<wbr></wbr>
-              <span className="hidden sm:block"></span>own&nbsp;
-              <span className="pa-displayLight">platform</span>
-            </>
-          }
-        />
-        <Link href={'./inputTitle'}>
-          <a>
-            <button className="flex items-center gap-1 ml-1 sm:ml-2 pa-paragraph sm:hover:text-[#ecf1f0]">
-              <span className="mb-1">get started</span>
-              <IoIosArrowRoundForward size={32} />
-            </button>
-          </a>
-        </Link>
+        <div className="flex flex-col gap-6 sm:gap-8">
+          <HeroText
+            text={
+              <>
+                bring your music nft&nbsp;<wbr></wbr>
+                <span className="hidden sm:block"></span>to&nbsp;
+                <span className="pa-displayLight">your drop page</span>
+              </>
+            }
+          />
+          <VercelDeploy />
+        </div>
       </HeroWrapper>
     </div>
   )
 }
 
-export default Home
+export default Deploy

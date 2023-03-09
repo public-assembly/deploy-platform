@@ -7,46 +7,48 @@ import { HeroText } from 'components/HeroText'
 import { HeroWrapper } from 'components/HeroWrapper'
 import { Seo } from 'components/Seo'
 
-const InputSymbol: NextPage = () => {
+const InputDropAddress: NextPage = () => {
   const router = useRouter()
 
-  const { symbol, setSymbol } = useFormStateProvider()
+  const { dropAddress, setDropAddress } = useFormStateProvider()
 
   const handleClick = (e: any) => {
-    router.push('/inputCurationPass')
+    router.push('/deploy')
   }
 
   const handleKeyPress = (e: any) => {
     if (e.key === 'Enter') {
-      router.push('/inputCurationPass')
+      handleClick(e)
     }
   }
 
   return (
     <div>
       <Seo
-        title="Symbol"
+        title="Drop Address"
         description="The place to begin experimenting with onchain curation."
       />
-      <Header route={'./inputTitle'} routeName="edit title" />
+      <Header route={'./inputChain'} routeName="edit chain" />
       <HeroWrapper>
         <HeroText
           text={
             <>
-              next,&nbsp;<span className="hidden sm:block"></span>choose a&nbsp;
-              <span className="pa-displayLight">symbol</span>
+              next,&nbsp;<span className="hidden sm:block"></span> what&apos;s your&nbsp;{' '}
+              <span className="hidden sm:block"></span>
+              <span className="pa-displayLight">drop address</span>?
             </>
           }
         />
         <Input
-          value={symbol}
-          placeholder="e.g. NEO"
-          onChange={(e: any) => setSymbol(e.currentTarget.value)}
+          value={dropAddress}
+          placeholder="e.g. 0x35b29ee2D9fA05907777B19348a058F8705AA56d"
+          onChange={(e: any) => setDropAddress(e.currentTarget.value)}
           onClick={handleClick}
+          onKeyPress={handleKeyPress}
         />
       </HeroWrapper>
     </div>
   )
 }
 
-export default InputSymbol
+export default InputDropAddress

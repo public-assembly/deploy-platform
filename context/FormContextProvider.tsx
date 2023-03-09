@@ -13,6 +13,10 @@ export type FormStateReturnTypes = {
   setCurationPass?: any /* Specify Typings */
   media?: any /* Specify Typings */
   setMedia?: any /* Specify Typings */
+  chainId?: number
+  setChainId?: any /* Specify Typings */
+  dropAddress?: string
+  setDropAddress?: any /* Specify Typings */
 }
 
 // These are the default values of our context object
@@ -25,6 +29,10 @@ const FormStateContext = createContext<FormStateReturnTypes>({
   setCurationPass: () => {},
   media: [],
   setMedia: () => {},
+  chainId: 0,
+  setChainId: () => {},
+  dropAddress: '',
+  setDropAddress: () => {},
 })
 
 export function useFormStateProvider() {
@@ -38,6 +46,8 @@ export function FormStateProvider({ children }: FormStateProps) {
   const [symbol, setSymbol] = useState('')
   const [curationPass, setCurationPass] = useState('')
   const [media, setMedia] = useState('')
+  const [chainId, setChainId] = useState(0)
+  const [dropAddress, setDropAddress] = useState('')
 
   return (
     // The provider gives access to the context to its children
@@ -51,6 +61,10 @@ export function FormStateProvider({ children }: FormStateProps) {
         setCurationPass,
         media,
         setMedia,
+        chainId,
+        setChainId,
+        dropAddress,
+        setDropAddress,
       }}>
       {children}
     </FormStateContext.Provider>

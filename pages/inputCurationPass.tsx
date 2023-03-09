@@ -45,7 +45,7 @@ const InputCurationPass: NextPage = () => {
         title="Pass"
         description="The place to begin experimenting with onchain curation."
       />
-      <Header route={'./inputSymbol'} routeName="edit symbol" />
+      <Header route={'./inputDropAddress'} routeName="edit symbol" />
       <HeroWrapper>
         <HeroText
           text={
